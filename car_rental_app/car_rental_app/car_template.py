@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 import datetime
+from json_handler import json_writer, json_reader
 
 
 class Car(BaseModel):
@@ -96,6 +97,12 @@ id_001 = BMW3(
     color="Alpine White",
     body_style="Sedan",
 )
+# Convert an instance to JSON file
+json_writer(path="static/json/id_001.json", inst=id_001, inst_id="id_001")
 
-for value in id_001:
-    print(value)
+# Read from the JSON file
+instance_001 = json_reader(path="static/json/id_001.json")
+
+# Print values from the instance
+print(f"Brand: {instance_001['id_001']['brand']}")
+print(f"Model: {instance_001['id_001']['model']}")
