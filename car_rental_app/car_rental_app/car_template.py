@@ -1,0 +1,101 @@
+from pydantic import BaseModel
+import datetime
+
+
+class Car(BaseModel):
+    """
+    Basic Car Information:
+
+    Brand: String representing the car manufacturer (e.g., "Ford", "Toyota", "BMW").
+    Model: String representing the specific car model (e.g., "Fiesta", "Corolla", "X5").
+    Year: Integer representing the year the car was manufactured (e.g., 2023, 2018, 2005).
+    License_plate_number: String representing the car's unique license plate number (e.g., "ABC-123", "XYZ-456").
+    Mileage: Integer representing the total distance the car has traveled (e.g., 30000, 55000, 120000).
+    Engine_size: Float representing the engine displacement of the car in liters (e.g., 1.6, 2.0, 3.5).
+    Fuel_type: String representing the type of fuel the car uses (e.g., "Gasoline", "Diesel", "Hybrid", "Electric").
+    Gearbox: String representing transmission the car has (e.g., "Automatic", "Manual").
+    Air_condition: It can be included as a boolean attribute (True/False) or a string ("Yes"/"No").
+    Number_of_seats: Integer representing the number of passenger seats the car has (e.g., 5, 7, 8).
+    Number_of_doors: Integer representing the number of doors the car has (e.g., 5, 7, 8).
+
+    Rental Information:
+
+    Status: String representing the current availability of the car (e.g., "Available", "Rented", "In Repair").
+    Daily_rental_rate: Float representing the daily cost to rent the car (e.g., 50.00, 75.50, 120.75).
+    rental_history: List of previous rentals for the car.
+
+    Additional Car Details:
+
+    color: String representing the exterior color of the car (e.g., "Red", "Silver", "Black").
+    body_style: String representing the type of car body (e.g., "Sedan", "SUV", "Hatchback").
+    features: List of additional features the car has (e.g., "Android Auto", "Apple Carplay", "Sunroof").
+    images: List of URLs or file paths to images of the car.
+    insurance: Information about the car's insurance coverage (format can be defined based on your needs).
+    location: Information about the car's current location (e.g., coordinates or address).
+    maintenance_history: Record of the car's maintenance history.
+    inspection_due_date: Date when the next car inspection is due.
+    damage_report: Record of any known damage to the car.
+    additional_notes: Any additional notes or information about the car.
+    """
+
+    # Basic Car Information
+    brand: str
+    model: str
+    year: int
+    license_plate_number: str
+    mileage: float
+    engine_size: float
+    fuel_type: str
+    gearbox: str
+    air_condition: bool
+    number_of_seats: int
+    number_of_doors: int
+    color: str
+    body_style: str
+
+    # Rental Information
+    status: str | None = None  # Default value
+    daily_rental_rate: float = 0.0  # Default value
+    rental_start_date: datetime.date | None = None  # Can be None
+    rental_end_date: datetime.date | None = None  # Can be None
+    rental_history: list[dict] = []  # Empty list by default
+
+    # Additional Car Details
+    features: list[str] = []  # Empty list by default
+    images: list[str] = []  # Empty list by default
+    insurance: dict | None = None  # Can be None
+    location: dict | None = None  # Can be None
+    maintenance_history: list[dict] = []  # Empty list by default
+    inspection_due_date: str | None = None  # Can be None
+    damage_report: str | None = None  # Can be None
+    additional_notes: str | None = None  # Can be None
+
+
+class BMW3(Car):
+    def __init__(self, *args, **kwargs):
+        # Call the superclass constructor with the required arguments
+        super().__init__(**kwargs)  # *args if needed
+
+        # Add specific BMW3 attributes (if any) here
+        # ...
+
+
+# Create an instance of the BMW3 class
+id_001 = BMW3(
+    brand="BMW",
+    model="3 Series",
+    year=2023,
+    license_plate_number="RZ2390",
+    mileage=30000,
+    engine_size=2.0,
+    fuel_type="Gasoline",
+    gearbox="Automatic",
+    air_condition=True,
+    number_of_seats=5,
+    number_of_doors=4,
+    color="Alpine White",
+    body_style="Sedan",
+)
+
+for value in id_001:
+    print(value)
