@@ -22,6 +22,7 @@ Zdaje się, że pydantic to @dataclass z dodatkowymi opcjami
 1. `git checkout development`
 2. `git fetch/git pull` dla upewnienia się, że nasz development branch jest up-to-date
 3. `git merge <nazwa-własnego brancha>`
+4. `git push` żeby merg był dostępny dla wszystkich
 - możemy też pomyśleć o tworzeniu branchów w inny sposób\ 
 tj. tak jak mówił Piotr na zajęciach z gita, że możemy tworzyć\
 np. feature1, feature2
