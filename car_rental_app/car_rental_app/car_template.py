@@ -54,21 +54,21 @@ class Car(BaseModel):
     body_style: str
 
     # Rental Information
-    status: str | None = None  # Default value
-    daily_rental_rate: float = 0.0  # Default value
-    rental_start_date: datetime.date | None = None  # Can be None
-    rental_end_date: datetime.date | None = None  # Can be None
-    rental_history: list[dict] = []  # Empty list by default
+    status: str = "Not Available"
+    daily_rental_rate: float = 0.0
+    rental_start_date: datetime.datetime | None = None
+    rental_end_date: datetime.datetime | None = None
+    rental_history: list[dict] = []
 
     # Additional Car Details
-    features: list[str] = []  # Empty list by default
-    images: list[str] = []  # Empty list by default
-    insurance: dict | None = None  # Can be None
-    location: dict | None = None  # Can be None
-    maintenance_history: list[dict] = []  # Empty list by default
-    inspection_due_date: str | None = None  # Can be None
-    damage_report: str | None = None  # Can be None
-    additional_notes: str | None = None  # Can be None
+    features: list[str] = []
+    images: list[str] = []
+    insurance: list[dict] = []
+    location: dict = {}
+    maintenance_history: list[dict] = []
+    inspection_due_date: dict = {}
+    damage_report: list[dict] = []
+    additional_notes: dict = {}
 
 
 class BMW3(Car):
