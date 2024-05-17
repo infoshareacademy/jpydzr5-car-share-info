@@ -7,6 +7,7 @@ instance_001 = json_reader(path="static/json/id_001.json")
 print(f"Brand: {instance_001['id_001']['brand']}")
 print(f"Model: {instance_001['id_001']['model']}")
 
+##
 
 import datetime
 import re
