@@ -3,7 +3,9 @@
 ## Pomocne linki
 Link: [jira board](https://jira.is-academy.pl/secure/RapidBoard.jspa?projectKey=JPYDZR5CSI&useStoredSettings=true&rapidView=735)\
 Link: [github repo](https://github.com/infoshareacademy/jpydzr5-car-share-info)\
-Link: [cookiecutter](https://github.com/cookiecutter/cookiecutter-django)
+Link: [cookiecutter](https://github.com/cookiecutter/cookiecutter-django)\
+Link: [mockup w draw.io](https://drive.google.com/file/d/10rDNeEZyQgdcHb7olGP9QSdKDun1KvkD/view?usp=sharing)
+
 
 ## To-do
 1. Zapoznać się z naszym jira boardem
@@ -29,3 +31,23 @@ np. feature1, feature2
 
 ## Spotkania
 - być może dobrze będzie jeżeli z wyprzedzeniem ustalimy kiedy będziemy się spotykać na krótkie briefingi.
+## Mockup
+
+Mockup aplikacji został przygotowany w draw.io. Możesz go zobaczyć i edytować, klikając w poniższy link:
+
+[Zobacz mockup w draw.io](https://drive.google.com/file/d/10rDNeEZyQgdcHb7olGP9QSdKDun1KvkD/view?usp=sharing)
+
+### Jak otworzyć mockup w draw.io
+
+1. Kliknij na powyższy link, aby otworzyć mockup w draw.io.
+2. Jeśli posiadasz konto w draw.io, zaloguj się, aby móc edytować mockup.
+3. Jeśli nie masz konta, możesz go otworzyć w trybie gościa, jednak możliwość zapisu i edycji może być ograniczona.
+4. Po otwarciu mockupu, możesz go modyfikować według potrzeb za pomocą narzędzi dostępnych w aplikacji.
+
+### Aktualizacja mockupu
+
+Jeśli dokonasz zmian w mockupie, pamiętaj, aby zapisać nowe wersje i zaktualizować link, jeśli to konieczne. Aby zaktualizować link do mockupu:
+
+1. Zapisz nową wersję mockupu w draw.io.
+2. Skopiuj nowy link do mockupu.
+3. Zaktualizuj powyższy link w pliku `README.md`, aby wskazywał na najnowszą wersję.
