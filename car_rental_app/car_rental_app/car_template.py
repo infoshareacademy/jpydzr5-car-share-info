@@ -98,10 +98,10 @@ id_001 = BMW3(
     body_style="Sedan",
 )
 # Convert an instance to JSON file
-json_writer(path="static/json/id_001.json", inst_var=id_001, inst_str="id_001")
+json_writer(path="static/json/cars.json", inst_var=id_001, inst_str="id_001")
 
 # Read from the JSON file
-instance_001 = json_reader(path="static/json/id_001.json")
+instance_001 = json_reader(path="static/json/cars.json")
 
 # Print values from the instance
 print(f"Brand: {instance_001['id_001']['brand']}")
