@@ -1,8 +1,8 @@
 import json
 
 
-# JSON Writer
-def json_writer(path, inst_var, inst_str):
+# JSON car instance writer
+def json_car_writer(path, inst_var, inst_str):
     try:
         blueprint = {inst_str: dict(inst_var)}
         with open(path, "w") as f:
@@ -11,8 +11,8 @@ def json_writer(path, inst_var, inst_str):
         print(e.args)
 
 
-# JSON Reader
-def json_reader(path):
+# JSON car instance reader
+def json_car_reader(path):
     try:
         with open(path, "r") as f:
             data = json.load(f)
