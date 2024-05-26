@@ -3,6 +3,7 @@
         "brand": "BMW",
         "model": "3 Series",
         "year": 2023,
+        "car_category": "S",
         "license_plate_number": "RZ2390",
         "mileage": 30000.0,
         "engine_size": 2.0,

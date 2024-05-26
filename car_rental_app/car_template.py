@@ -10,6 +10,7 @@ class Car(BaseModel):
     Brand: String representing the car manufacturer (e.g., "Ford", "Toyota", "BMW").
     Model: String representing the specific car model (e.g., "Fiesta", "Corolla", "X5").
     Year: Integer representing the year the car was manufactured (e.g., 2023, 2018, 2005).
+    Car_category : String representing the car's category (e.g., "A", "B", "C", "S").
     License_plate_number: String representing the car's unique license plate number (e.g., "ABC-123", "XYZ-456").
     Mileage: Integer representing the total distance the car has traveled (e.g., 30000, 55000, 120000).
     Engine_size: Float representing the engine displacement of the car in liters (e.g., 1.6, 2.0, 3.5).
@@ -43,6 +44,7 @@ class Car(BaseModel):
     brand: str
     model: str
     year: int
+    car_category: str
     license_plate_number: str
     mileage: float
     engine_size: float
@@ -86,6 +88,7 @@ id_001 = BMW3(
     brand="BMW",
     model="3 Series",
     year=2023,
+    car_category="S",
     license_plate_number="RZ2390",
     mileage=30000,
     engine_size=2.0,
@@ -97,11 +100,11 @@ id_001 = BMW3(
     color="Alpine White",
     body_style="Sedan",
 )
-# Convert an instance to JSON file
-json_writer(path="static/json/cars.json", inst_var=id_001, inst_str="id_001")
+# Convert an instance to JSON file®
+json_writer(path="json/cars.json", inst_var=id_001, inst_str="id_001")
 
 # Read from the JSON file
-instance_001 = json_reader(path="static/json/cars.json")
+instance_001 = json_reader(path="json/cars.json")
 
 # Print values from the instance
 print(f"Brand: {instance_001['id_001']['brand']}")
