@@ -1,10 +1,10 @@
 
-from rental_location import RentalLocation
-from rental_period import RentalPeriod
-from car_category import CarCategory
-from extras import Extras
-from personal_data import PersonalData
-from address_data import AddressData
+from car_rental_data.rental_location import RentalLocation
+from car_rental_data.rental_period import RentalPeriod
+from car_rental_data.car_category import CarCategory
+from car_rental_data.extras import Extras
+from car_rental_data.personal_data import PersonalData
+from car_rental_data.address_data import AddressData
 class CarRental:
     def __init__(self):
         self.rental_start = None
