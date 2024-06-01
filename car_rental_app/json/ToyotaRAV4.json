@@ -1,0 +1,31 @@
+{
+    "id_013": {
+        "brand": "Toyota",
+        "model": "RAV4",
+        "year": 2024,
+        "car_category": "SUV",
+        "license_plate_number": "WA7896",
+        "mileage": 29000.0,
+        "engine_size": 2.5,
+        "fuel_type": "Hybrid",
+        "gearbox": "Automatic",
+        "air_condition": true,
+        "number_of_seats": 5,
+        "number_of_doors": 4,
+        "color": "Cavalry Blue",
+        "body_style": "SUV",
+        "status": "Not Available",
+        "daily_rental_rate": 0.0,
+        "rental_start_date": null,
+        "rental_end_date": null,
+        "rental_history": [],
+        "features": [],
+        "images": [],
+        "insurance": [],
+        "location": {},
+        "maintenance_history": [],
+        "inspection_due_date": {},
+        "damage_report": [],
+        "additional_notes": {}
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "id_011": {
+        "brand": "BMW",
+        "model": "X3",
+        "year": 2024,
+        "car_category": "SUV",
+        "license_plate_number": "GD7102",
+        "mileage": 15000.0,
+        "engine_size": 2.0,
+        "fuel_type": "Diesel",
+        "gearbox": "Automatic",
+        "air_condition": true,
+        "number_of_seats": 5,
+        "number_of_doors": 4,
+        "color": "Grey Black",
+        "body_style": "SUV",
+        "status": "Not Available",
+        "daily_rental_rate": 0.0,
+        "rental_start_date": null,
+        "rental_end_date": null,
+        "rental_history": [],
+        "features": [],
+        "images": [],
+        "insurance": [],
+        "location": {},
+        "maintenance_history": [],
+        "inspection_due_date": {},
+        "damage_report": [],
+        "additional_notes": {}
+    }
+}

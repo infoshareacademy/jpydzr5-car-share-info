@@ -1,0 +1,31 @@
+{
+    "id_007": {
+        "brand": "Opel",
+        "model": "Astra",
+        "year": 2023,
+        "car_category": "Compact",
+        "license_plate_number": "PO5642",
+        "mileage": 89000.0,
+        "engine_size": 1.2,
+        "fuel_type": "Petrol",
+        "gearbox": "Manual",
+        "air_condition": true,
+        "number_of_seats": 5,
+        "number_of_doors": 4,
+        "color": "Black",
+        "body_style": "Hatchback",
+        "status": "Not Available",
+        "daily_rental_rate": 0.0,
+        "rental_start_date": null,
+        "rental_end_date": null,
+        "rental_history": [],
+        "features": [],
+        "images": [],
+        "insurance": [],
+        "location": {},
+        "maintenance_history": [],
+        "inspection_due_date": {},
+        "damage_report": [],
+        "additional_notes": {}
+    }
+}
