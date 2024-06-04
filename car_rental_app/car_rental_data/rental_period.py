@@ -1,4 +1,6 @@
 import datetime
+
+
 class RentalPeriod:
     def __init__(self, start_date, start_time, end_date, end_time):
         self.start_date = start_date
@@ -31,4 +33,3 @@ class RentalPeriod:
 
     def __str__(self):
         return f"Odbiór: {self.start_date} {self.start_time}, Zwrot: {self.end_date} {self.end_time}"
-

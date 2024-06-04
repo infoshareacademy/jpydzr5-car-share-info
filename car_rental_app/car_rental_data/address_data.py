@@ -1,4 +1,6 @@
 import re
+
+
 class AddressData:
     def __init__(self, street, apartment_number, postal_code, city, country):
         self.street = street
@@ -13,6 +15,3 @@ class AddressData:
 
     def __str__(self):
         return f"{self.street} {self.apartment_number}, {self.postal_code} {self.city}, {self.country}"
-
-
-

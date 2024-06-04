@@ -12,4 +12,3 @@ class CarCategory:
 
     def __str__(self):
         return f"Kategoria {self.category}, Koszt: {self.total_cost:.2f} PLN, Przykłady: {', '.join(self.examples)}"
-

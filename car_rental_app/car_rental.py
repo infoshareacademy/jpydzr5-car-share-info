@@ -1,10 +1,11 @@
-
 from car_rental_data.rental_location import RentalLocation
 from car_rental_data.rental_period import RentalPeriod
 from car_rental_data.car_category import CarCategory
 from car_rental_data.extras import Extras
 from car_rental_data.personal_data import PersonalData
 from car_rental_data.address_data import AddressData
+
+
 class CarRental:
     def __init__(self):
         self.rental_start = None
@@ -60,7 +61,8 @@ class CarRental:
             print("\nDostępne kategorie aut:")
             for category, details in CarCategory.categories.items():
                 print(
-                    f"Kategoria {category}: {details['price']} PLN za dzień, Przykłady: {', '.join(details['examples'])}")
+                    f"Kategoria {category}: {details['price']} PLN za dzień, "
+                    f"Przykłady: {', '.join(details['examples'])}")
 
             car_category = input("Wybierz kategorię auta (A/B): ").upper()
             if car_category in CarCategory.categories:
@@ -172,4 +174,3 @@ class CarRental:
 
             if self.summary():
                 break
-
