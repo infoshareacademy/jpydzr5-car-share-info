@@ -393,24 +393,9 @@ json_car_writer(path="json/car_catalog.json", inst_var=id_016, inst_str="id_016"
 json_car_writer(path="json/car_catalog.json", inst_var=id_017, inst_str="id_017")
 
 # Read from the JSON file
-instance_001 = json_car_reader(path="json/id_001")
-instance_002 = json_car_reader(path="json/id_002")
-instance_003 = json_car_reader(path="json/id_003")
-instance_004 = json_car_reader(path="json/id_004")
-instance_005 = json_car_reader(path="json/id_005")
-instance_006 = json_car_reader(path="json/id_006")
-instance_007 = json_car_reader(path="json/id_007")
-instance_008 = json_car_reader(path="json/id_008")
-instance_009 = json_car_reader(path="json/id_009")
-instance_010 = json_car_reader(path="json/id_010")
-instance_011 = json_car_reader(path="json/id_011")
-instance_012 = json_car_reader(path="json/id_012")
-instance_013 = json_car_reader(path="json/id_013")
-instance_014 = json_car_reader(path="json/id_014")
-instance_015 = json_car_reader(path="json/id_015")
-instance_016 = json_car_reader(path="json/id_016")
-instance_017 = json_car_reader(path="json/id_017")
+car_catalog = json_car_reader(path="json/car_catalog.json")
+
 
 # Print values from the instance
-print(f"Brand: {instance_001['id_017']}")
-print(f"Model: {instance_001['id_017']}")
+print(f"Brand: {car_catalog['id_017']['brand']}")
+print(f"Model: {car_catalog['id_017']['model']}")
