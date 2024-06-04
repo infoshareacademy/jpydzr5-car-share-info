@@ -94,7 +94,7 @@ id_001 = Vehicle(
     engine_size=1.0,
     fuel_type="Hybrid",
     gearbox="Automatic",
-    air_condition=False,
+    air_condition=True,
     number_of_seats=5,
     number_of_doors=4,
     color="Barcelona Red",
@@ -353,7 +353,7 @@ id_016 = Vehicle(
     number_of_seats=5,
     number_of_doors=4,
     color="Terra Grey",
-    body_style="Kombi",
+    body_style="Combi",
 )
 
 id_017 = Vehicle(
@@ -370,31 +370,30 @@ id_017 = Vehicle(
     number_of_seats=5,
     number_of_doors=4,
     color="Candy White",
-    body_style="Kombi",
+    body_style="Combi",
 )
 
 # Convert an instance to JSON file
-json_car_writer(path="json/car_catalog.json", inst_var=id_001, inst_str="id_001")
-json_car_writer(path="json/car_catalog.json", inst_var=id_002, inst_str="id_002")
-json_car_writer(path="json/car_catalog.json", inst_var=id_003, inst_str="id_003")
-json_car_writer(path="json/car_catalog.json", inst_var=id_004, inst_str="id_004")
-json_car_writer(path="json/car_catalog.json", inst_var=id_005, inst_str="id_005")
-json_car_writer(path="json/car_catalog.json", inst_var=id_006, inst_str="id_006")
-json_car_writer(path="json/car_catalog.json", inst_var=id_007, inst_str="id_007")
-json_car_writer(path="json/car_catalog.json", inst_var=id_008, inst_str="id_008")
-json_car_writer(path="json/car_catalog.json", inst_var=id_009, inst_str="id_009")
-json_car_writer(path="json/car_catalog.json", inst_var=id_010, inst_str="id_010")
-json_car_writer(path="json/car_catalog.json", inst_var=id_011, inst_str="id_011")
-json_car_writer(path="json/car_catalog.json", inst_var=id_012, inst_str="id_012")
-json_car_writer(path="json/car_catalog.json", inst_var=id_013, inst_str="id_013")
-json_car_writer(path="json/car_catalog.json", inst_var=id_014, inst_str="id_014")
-json_car_writer(path="json/car_catalog.json", inst_var=id_015, inst_str="id_015")
-json_car_writer(path="json/car_catalog.json", inst_var=id_016, inst_str="id_016")
-json_car_writer(path="json/car_catalog.json", inst_var=id_017, inst_str="id_017")
+json_car_writer(path="json/car_catalog.json", inst_str="id_001", inst_var=id_001)
+json_car_writer(path="json/car_catalog.json", inst_str="id_002", inst_var=id_002)
+json_car_writer(path="json/car_catalog.json", inst_str="id_003", inst_var=id_003)
+json_car_writer(path="json/car_catalog.json", inst_str="id_004", inst_var=id_004)
+json_car_writer(path="json/car_catalog.json", inst_str="id_005", inst_var=id_005)
+json_car_writer(path="json/car_catalog.json", inst_str="id_006", inst_var=id_006)
+json_car_writer(path="json/car_catalog.json", inst_str="id_007", inst_var=id_007)
+json_car_writer(path="json/car_catalog.json", inst_str="id_008", inst_var=id_008)
+json_car_writer(path="json/car_catalog.json", inst_str="id_009", inst_var=id_009)
+json_car_writer(path="json/car_catalog.json", inst_str="id_010", inst_var=id_010)
+json_car_writer(path="json/car_catalog.json", inst_str="id_011", inst_var=id_011)
+json_car_writer(path="json/car_catalog.json", inst_str="id_012", inst_var=id_012)
+json_car_writer(path="json/car_catalog.json", inst_str="id_013", inst_var=id_013)
+json_car_writer(path="json/car_catalog.json", inst_str="id_014", inst_var=id_014)
+json_car_writer(path="json/car_catalog.json", inst_str="id_015", inst_var=id_015)
+json_car_writer(path="json/car_catalog.json", inst_str="id_016", inst_var=id_016)
+json_car_writer(path="json/car_catalog.json", inst_str="id_017", inst_var=id_017)
 
 # Read from the JSON file
 car_catalog = json_car_reader(path="json/car_catalog.json")
-
 
 # Print values from the instance
 print(f"Brand: {car_catalog['id_017']['brand']}")
