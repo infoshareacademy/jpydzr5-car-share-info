@@ -14,16 +14,14 @@ def get_rental_location():
         city = input(f"[3/12] Podaj nazwę miasta: ")
         # Add validation for the city
 
+        return street, postal_code, city
+
     except Exception as e:
         print(e)
 
 
-def square(n):
-    return n * n
-
-
 def main():
-    get_rental_location()
+    print(get_rental_location())
 
 
 if __name__ == "__main__":
