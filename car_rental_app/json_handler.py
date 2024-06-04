@@ -41,3 +41,9 @@ def json_car_reader(path):
             return data
     except Exception as e:
         return e.args
+
+
+# JSON user data writer
+def json_user_data_writer(path, function_data: dict):
+    with open(path, "w") as f:
+        json.dump(function_data, f, indent=4)

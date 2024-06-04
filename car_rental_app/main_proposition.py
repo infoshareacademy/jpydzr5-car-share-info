@@ -1,27 +1,22 @@
+import json
 import re
-
-
-def get_rental_location():
-    try:
-
-        street = input(f"[1/12] Podaj ulicę odbioru: ")
-        # Add validation for the street
-
-        postal_code = input(f"[2/12] Podaj kod pocztowy odbioru(format: XX-XXX): ")
-        if not re.match(r"^\d{2}-\d{3}$", postal_code):
-            raise ValueError("Nieprawidłowy kod pocztowy. Spróbuj ponownie.")
-
-        city = input(f"[3/12] Podaj nazwę miasta: ")
-        # Add validation for the city
-
-        return street, postal_code, city
-
-    except Exception as e:
-        print(e)
+from feature1 import get_rental_location
+from json_handler import json_user_data_writer
 
 
 def main():
-    print(get_rental_location())
+    # Unpacking values from function
+    street, postal_code, city = get_rental_location()
+
+    # Prepare get_rental_location function to save to json
+    data = {
+        "street": street,
+        "postal_code": postal_code,
+        "city": city,
+    }
+
+    # JSON handler
+    json_user_data_writer(path="json/user_data.json", function_data=data)
 
 
 if __name__ == "__main__":

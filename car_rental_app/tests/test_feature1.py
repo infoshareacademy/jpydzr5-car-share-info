@@ -1,4 +1,4 @@
-from main_proposition import get_rental_location
+from feature1 import get_rental_location
 from pytest import MonkeyPatch
 from copy import deepcopy
 
