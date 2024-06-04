@@ -14,7 +14,7 @@ class Car(BaseModel):
     License_plate_number: String representing the car's unique license plate number (e.g., "ABC-123", "XYZ-456").
     Mileage: Integer representing the total distance the car has traveled (e.g., 30000, 55000, 120000).
     Engine_size: Float representing the engine displacement of the car in liters (e.g., 1.6, 2.0, 3.5).
-    Fuel_type: String representing the type of fuel the car uses (e.g., "Gasoline", "Diesel", "Hybrid", "Electric").
+    Fuel_type: String representing the type of fuel the car uses (e.g., "Petrol", "Diesel", "Hybrid", "Electric").
     Gearbox: String representing transmission the car has (e.g., "Automatic", "Manual").
     Air_condition: It can be included as a boolean attribute (True/False) or a string ("Yes"/"No").
     Number_of_seats: Integer representing the number of passenger seats the car has (e.g., 5, 7, 8).
@@ -81,8 +81,6 @@ class Vehicle(Car):
 
         # Add specific attributes (if any) here
         # ...
-
-
 
 
 # Create an instance of the vehicle class
