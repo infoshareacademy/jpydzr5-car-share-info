@@ -1,5 +1,6 @@
 import re
 
+
 class RentalLocation:
     def __init__(self, street, postal_code):
         self.street = street
