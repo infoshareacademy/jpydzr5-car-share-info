@@ -1,5 +1,5 @@
 from feature1 import get_rental_location
-from pytest import MonkeyPatch
+from pytest import MonkeyPatch # type: ignore
 from copy import deepcopy
 
 
@@ -19,7 +19,7 @@ def test_get_rental_location_invalid1(monkeypatch: MonkeyPatch):
     inputs = ["", "", ""]
 
     # Deepcopy tuple for tests result
-    inputs_ = tuple(deepcopy(inputs))
+    tuple(deepcopy(inputs))
     monkeypatch.setattr("builtins.input", lambda _: inputs.pop(0))
     result = get_rental_location()
     # ValueError returns None
