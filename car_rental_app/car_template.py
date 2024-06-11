@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel # type: ignore
 import datetime
 from json_handler import json_car_writer, json_car_reader
 
