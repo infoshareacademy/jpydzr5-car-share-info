@@ -1,4 +1,4 @@
-from pydantic import BaseModel # type: ignore
+from pydantic import BaseModel
 import datetime
 from json_handler import json_car_writer, json_car_reader
 
@@ -396,5 +396,5 @@ json_car_writer(path="json/car_catalog.json", inst_str="id_017", inst_var=id_017
 car_catalog = json_car_reader(path="json/car_catalog.json")
 
 # Print values from the instance
-print(f"Brand: {car_catalog['id_017']['brand']}")
-print(f"Model: {car_catalog['id_017']['model']}")
+print(f"Brand: {car_catalog['id_017']['brand']}") # type: ignore
+print(f"Model: {car_catalog['id_017']['model']}") # type: ignore

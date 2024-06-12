@@ -11,6 +11,7 @@ from os import path as path_
 #     except Exception as e:
 #         print(e.args)
 
+
 # JSON car instance writer v.02
 def json_car_writer(path, inst_str, inst_var):
     try:
@@ -26,8 +27,8 @@ def json_car_writer(path, inst_str, inst_var):
 
         blueprint[inst_str] = dict(inst_var)
 
-        with open(path, "w") as f:
-            json.dump(blueprint, f, indent=4)
+        with open(path, "w", encoding="utf8") as f:
+            json.dump(blueprint, f, indent=4, ensure_ascii=False)
 
     except Exception as e:
         print(e.args)
@@ -45,8 +46,8 @@ def json_car_reader(path):
 
 # JSON user data writer
 def json_user_data_writer(path, function_data: dict):
-    with open(path, "w") as f:
-        json.dump(function_data, f, indent=4)
+    with open(path, "w", encoding="utf8") as f:
+        json.dump(function_data, f, indent=4, ensure_ascii=False)
 
 
 # JSON user data reader

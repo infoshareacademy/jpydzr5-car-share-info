@@ -5,7 +5,7 @@ from json_handler import json_user_data_writer, json_user_data_reader
 def main():
     try:
         # Unpacking values from function
-        street, postal_code, city = get_rental_location()
+        street, postal_code, city = get_rental_location()  # type: ignore
 
         # Prepare get_rental_location function to save to json
         data = {
@@ -21,7 +21,7 @@ def main():
         data = json_user_data_reader(path="json/user_data.json")
         print(data)
     except Exception as e:
-        return e.args
+        print(e.args)
 
 
 if __name__ == "__main__":

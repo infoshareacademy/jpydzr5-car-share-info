@@ -1,7 +1,7 @@
 import re
 
 
-def get_rental_location() -> tuple:
+def get_rental_location() -> tuple | None:
     try:
         street: str = input("[1/12] Podaj ulicę odbioru: ")
         if not re.match(r"^\D+$", street):
@@ -14,6 +14,10 @@ def get_rental_location() -> tuple:
         city: str = input("[3/12] Podaj nazwę miasta: ")
         if not re.match(r"^\D+$", city):
             raise ValueError("Nieprawidłowa nazwa miasta. Spróbuj ponownie.")
+
+        # format arguments
+        street = street.title()
+        city = city.title()
 
         return street, postal_code, city
     except Exception as e:
