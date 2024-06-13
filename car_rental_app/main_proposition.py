@@ -4,6 +4,7 @@ from feature3 import choose_car_category
 from feature4 import choose_extras
 from feature5 import get_personal_data
 from feature6 import get_user_address
+from feature7 import show_offer
 from json_handler import json_user_data_reader, json_user_data_writer
 
 
@@ -77,15 +78,17 @@ def main():
         context_menu: int = int(
             input(
                 "Witaj w naszej wypożyczalni samochodów!\n"
-                "[1/3] Sprawdź ofertę\n"
+                "\n[1/3] Sprawdź ofertę\n"
                 "[2/3] Dokonaj rezerwacji\n"
                 "[3/3] Przejrzyj szczegóły rezerwacji\n"
-                "Wybierz opcję (1/2/3): "
+                "\n* Wybierz opcję (1/2/3): "
             )
         )
     except ValueError:
         print("Nieprawidłowa opcja. Spróbuj ponownie.")
 
+    if context_menu == 1:
+        show_offer()
     if context_menu == 2:
         rental_app()
 
