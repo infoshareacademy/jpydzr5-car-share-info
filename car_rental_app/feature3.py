@@ -16,7 +16,7 @@ def choose_car_category() -> str | bool:
         "SUV": {"price": 120.00, "examples": ["Toyota RAV4", "BMW X3", "Audi Q3"]},
     }
 
-    print("[8/12] Dostępne kategorie aut:")
+    print("[8/20] Dostępne kategorie aut:")
 
     for category, car_info in categories.items():
         price = car_info["price"]

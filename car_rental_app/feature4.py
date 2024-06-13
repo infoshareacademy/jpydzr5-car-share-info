@@ -3,7 +3,7 @@ def choose_extras() -> str | bool:
     two: str = "Wyjazd za granicę: 40.00 PLN za dzień"
     three: str = "Brak dodatkowego ubezpieczenia"
 
-    print("[9/12] Dostępne dodatki:")
+    print("[9/20] Dostępne dodatki:")
     print(f"1. {one}")
     print(f"2. {two}")
     print(f"3. {three}")
