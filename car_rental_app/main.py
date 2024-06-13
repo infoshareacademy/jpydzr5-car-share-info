@@ -126,3 +126,4 @@ if __name__ == "__main__":
 # BUG: end_date can be past start_date [feature2]
 # BUG: missing prices for rental [feature3, feature4]
 # BUG: missing logic with actual car status [main, car_template]
+# BUG: feature7 is actually feature3, it is not automated [feature7]
