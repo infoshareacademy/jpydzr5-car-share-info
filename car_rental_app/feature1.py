@@ -19,7 +19,9 @@ def get_rental_location() -> tuple | bool:
         street = street.title()
         city = city.title()
 
+        # return arguments
         return street, postal_code, city
+    
     except Exception as e:
         print(e)
         return False
