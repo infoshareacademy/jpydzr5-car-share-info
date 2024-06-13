@@ -128,3 +128,4 @@ if __name__ == "__main__":
 # BUG: missing prices for rental [feature3, feature4]
 # BUG: missing regex for apartment_number [feature6]
 # BUG: feature7 is a copy of feature3 without logic, it is not automated [feature7]
+# BUG: pytest is not working as expected [pytest]
