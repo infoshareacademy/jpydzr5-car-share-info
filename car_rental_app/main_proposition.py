@@ -1,5 +1,6 @@
 from feature1 import get_rental_location
-from json_handler import json_user_data_writer, json_user_data_reader
+from json_handler import json_user_data_writer
+# from json_handler import json_user_data_reader
 
 
 def main():
