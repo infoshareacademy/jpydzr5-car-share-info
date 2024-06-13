@@ -1,6 +1,7 @@
 from feature1 import get_rental_location
 from feature2 import get_rental_period
 from feature3 import choose_car_category
+from feature4 import choose_extras
 from json_handler import json_user_data_reader, json_user_data_writer
 
 
@@ -14,6 +15,13 @@ def main():
 
         # Unpacking values from feature3
         car_category = choose_car_category()
+        if car_category is False:
+            raise Exception
+
+        # Unpacking values from feature4
+        insurance = choose_extras()
+        if insurance is False:
+            raise Exception
 
         # Prepare functions to save to json
         data = {
@@ -28,6 +36,8 @@ def main():
             "end_time": end_time,
             # feature3
             "car_category": car_category,
+            # feature4
+            "insurance": insurance,
         }
 
         # JSON user_data_writer
