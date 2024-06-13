@@ -121,9 +121,10 @@ def main():
 if __name__ == "__main__":
     main()
 
-# BUG: missing regex for apartment_number [feature6]
+# BUG: missing logic with renting a car by user [main, car_template]
 # BUG: there's no minimal rental period [feature2]
 # BUG: end_date can be past start_date [feature2]
+# BUG: categories from feature3 could be automated. Based on car_template[feature3]
 # BUG: missing prices for rental [feature3, feature4]
-# BUG: missing logic with actual car status [main, car_template]
-# BUG: feature7 is actually feature3, it is not automated [feature7]
+# BUG: missing regex for apartment_number [feature6]
+# BUG: feature7 is a copy of feature3 without logic, it is not automated [feature7]
