@@ -1,6 +1,7 @@
-from pydantic import BaseModel
 import datetime
-from json_handler import json_car_writer, json_car_reader
+
+from json_handler import json_car_reader, json_car_writer
+from pydantic import BaseModel
 
 
 class Car(BaseModel):
@@ -272,7 +273,7 @@ id_011 = Vehicle(
 )
 
 id_012 = Vehicle(
-    brand="AudiQ3",
+    brand="Audi",
     model="Q3",
     year=2023,
     car_category="SUV",
@@ -373,28 +374,136 @@ id_017 = Vehicle(
     body_style="Combi",
 )
 
-# Convert an instance to JSON file
-json_car_writer(path="json/car_catalog.json", inst_str="id_001", inst_var=id_001)
-json_car_writer(path="json/car_catalog.json", inst_str="id_002", inst_var=id_002)
-json_car_writer(path="json/car_catalog.json", inst_str="id_003", inst_var=id_003)
-json_car_writer(path="json/car_catalog.json", inst_str="id_004", inst_var=id_004)
-json_car_writer(path="json/car_catalog.json", inst_str="id_005", inst_var=id_005)
-json_car_writer(path="json/car_catalog.json", inst_str="id_006", inst_var=id_006)
-json_car_writer(path="json/car_catalog.json", inst_str="id_007", inst_var=id_007)
-json_car_writer(path="json/car_catalog.json", inst_str="id_008", inst_var=id_008)
-json_car_writer(path="json/car_catalog.json", inst_str="id_009", inst_var=id_009)
-json_car_writer(path="json/car_catalog.json", inst_str="id_010", inst_var=id_010)
-json_car_writer(path="json/car_catalog.json", inst_str="id_011", inst_var=id_011)
-json_car_writer(path="json/car_catalog.json", inst_str="id_012", inst_var=id_012)
-json_car_writer(path="json/car_catalog.json", inst_str="id_013", inst_var=id_013)
-json_car_writer(path="json/car_catalog.json", inst_str="id_014", inst_var=id_014)
-json_car_writer(path="json/car_catalog.json", inst_str="id_015", inst_var=id_015)
-json_car_writer(path="json/car_catalog.json", inst_str="id_016", inst_var=id_016)
-json_car_writer(path="json/car_catalog.json", inst_str="id_017", inst_var=id_017)
 
-# Read from the JSON file
-car_catalog = json_car_reader(path="json/car_catalog.json")
+# car_category
+def car_categories() -> list:
+    category_list = []
+    category_list.append(id_001.car_category)
+    category_list.append(id_002.car_category)
+    category_list.append(id_003.car_category)
+    category_list.append(id_004.car_category)
+    category_list.append(id_005.car_category)
+    category_list.append(id_006.car_category)
+    category_list.append(id_007.car_category)
+    category_list.append(id_008.car_category)
+    category_list.append(id_009.car_category)
+    category_list.append(id_010.car_category)
+    category_list.append(id_011.car_category)
+    category_list.append(id_012.car_category)
+    category_list.append(id_013.car_category)
+    category_list.append(id_014.car_category)
+    category_list.append(id_015.car_category)
+    category_list.append(id_016.car_category)
+    category_list.append(id_017.car_category)
 
-# Print values from the instance
-print(f"Brand: {car_catalog['id_017']['brand']}") # type: ignore
-print(f"Model: {car_catalog['id_017']['model']}") # type: ignore
+    # Convert list to the set to avoid duplicates
+    category_set = set(category_list)
+    category_list = list(category_set)
+
+    # Return argument
+    return sorted(category_list)
+
+
+# car_examples brand
+def car_examples() -> list:
+    # brand
+    brand_list = []
+    brand_list.append(id_001.brand)
+    brand_list.append(id_002.brand)
+    brand_list.append(id_003.brand)
+    brand_list.append(id_004.brand)
+    brand_list.append(id_005.brand)
+    brand_list.append(id_006.brand)
+    brand_list.append(id_007.brand)
+    brand_list.append(id_008.brand)
+    brand_list.append(id_009.brand)
+    brand_list.append(id_010.brand)
+    brand_list.append(id_011.brand)
+    brand_list.append(id_012.brand)
+    brand_list.append(id_013.brand)
+    brand_list.append(id_014.brand)
+    brand_list.append(id_015.brand)
+    brand_list.append(id_016.brand)
+    brand_list.append(id_017.brand)
+
+    # model
+    model_list = []
+    model_list.append(id_001.model)
+    model_list.append(id_002.model)
+    model_list.append(id_003.model)
+    model_list.append(id_004.model)
+    model_list.append(id_005.model)
+    model_list.append(id_006.model)
+    model_list.append(id_007.model)
+    model_list.append(id_008.model)
+    model_list.append(id_009.model)
+    model_list.append(id_010.model)
+    model_list.append(id_011.model)
+    model_list.append(id_012.model)
+    model_list.append(id_013.model)
+    model_list.append(id_014.model)
+    model_list.append(id_015.model)
+    model_list.append(id_016.model)
+    model_list.append(id_017.model)
+
+    # category
+    category_list = []
+    category_list.append(id_001.car_category)
+    category_list.append(id_002.car_category)
+    category_list.append(id_003.car_category)
+    category_list.append(id_004.car_category)
+    category_list.append(id_005.car_category)
+    category_list.append(id_006.car_category)
+    category_list.append(id_007.car_category)
+    category_list.append(id_008.car_category)
+    category_list.append(id_009.car_category)
+    category_list.append(id_010.car_category)
+    category_list.append(id_011.car_category)
+    category_list.append(id_012.car_category)
+    category_list.append(id_013.car_category)
+    category_list.append(id_014.car_category)
+    category_list.append(id_015.car_category)
+    category_list.append(id_016.car_category)
+    category_list.append(id_017.car_category)
+
+    # Zip lists
+    zipped = zip(brand_list, model_list, category_list)
+
+    # Return argument
+    return list(zipped)
+
+
+def main():
+    # Convert an instance to JSON file
+    json_car_writer(path="json/car_catalog.json", inst_str="id_001", inst_var=id_001)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_002", inst_var=id_002)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_003", inst_var=id_003)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_004", inst_var=id_004)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_005", inst_var=id_005)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_006", inst_var=id_006)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_007", inst_var=id_007)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_008", inst_var=id_008)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_009", inst_var=id_009)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_010", inst_var=id_010)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_011", inst_var=id_011)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_012", inst_var=id_012)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_013", inst_var=id_013)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_014", inst_var=id_014)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_015", inst_var=id_015)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_016", inst_var=id_016)
+    json_car_writer(path="json/car_catalog.json", inst_str="id_017", inst_var=id_017)
+
+    # Read from the JSON file
+    car_catalog = json_car_reader(path="json/car_catalog.json")
+
+    # Print values from the instance
+    print(f"Brand: {car_catalog['id_017']['brand']}")  # type: ignore
+    print(f"Model: {car_catalog['id_017']['model']}")  # type: ignore
+
+    # Print car examples
+    for car in car_examples():
+        print(car)
+
+
+if __name__ == "__main__":
+    main()

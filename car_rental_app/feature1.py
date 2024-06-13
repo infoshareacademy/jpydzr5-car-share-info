@@ -21,7 +21,7 @@ def get_rental_location() -> tuple | bool:
 
         # return arguments
         return street, postal_code, city
-    
+
     except Exception as e:
         print(e)
         return False

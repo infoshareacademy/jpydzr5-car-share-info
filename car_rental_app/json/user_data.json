@@ -1,9 +1,10 @@
 {
-    "street": "Zielona",
-    "postal_code": "22-200",
+    "street": "Zielna",
+    "postal_code": "22-222",
     "city": "Góra Kalwaria",
     "start_date": "2024-10-10",
     "start_time": "07:00",
     "end_date": "2024-10-10",
-    "end_time": "12:00"
+    "end_time": "19:00",
+    "car_category": "SUV"
 }
