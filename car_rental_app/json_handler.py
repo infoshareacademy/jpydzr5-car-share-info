@@ -1,7 +1,6 @@
 import json
 from os import path as path_
 
-
 # JSON car instance writer v.01
 # def json_car_writer(path, inst_str, inst_var):
 #     try:

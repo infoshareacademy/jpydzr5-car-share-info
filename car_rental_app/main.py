@@ -88,10 +88,34 @@ def main():
     if context_menu == 2:
         rental_app()
     if context_menu == 3:
+        context = [
+            "1. Ulica odbioru",
+            "2. Kod pocztowy",
+            "3. Miasto",
+            "4. Data rezerwacji",
+            "5. Godzina rozpoczęcia rezerwacji",
+            "6. Data zakończenia rezerwacji",
+            "7. Godzina zakończenia rezerwacji",
+            "8. Kategoria samochodu",
+            "9. Extra",
+            "10. Imię",
+            "11. Nazwisko",
+            "12. Email",
+            "13. Telefon",
+            "14. PESEL",
+            "15. Numer prawa jazdy",
+            "16. Ulica",
+            "17. Numer lokalu",
+            "18. Kod pocztowy",
+            "19. Miasto",
+            "20. Kraj",
+        ]
         # JSON user_data_reader
         data = json_user_data_reader(path="json/user_data.json")
+        counter = 0
         for key, value in data.items():
-            print(f"   * {key}: {value}")
+            print(f"   * {context[counter]}: {value}")
+            counter += 1
 
 
 if __name__ == "__main__":
@@ -101,3 +125,4 @@ if __name__ == "__main__":
 # BUG: there's no minimal rental period [feature2]
 # BUG: end_date can be past start_date [feature2]
 # BUG: missing prices for rental [feature3, feature4]
+# BUG: missing logic with actual car status [main, car_template]
