@@ -3,6 +3,7 @@ from feature2 import get_rental_period
 from feature3 import choose_car_category
 from feature4 import choose_extras
 from feature5 import get_personal_data
+from feature6 import get_user_address
 from json_handler import json_user_data_reader, json_user_data_writer
 
 
@@ -27,6 +28,9 @@ def main():
         # Unpacking values from feature5
         first_name, last_name, email, phone, pesel, license_number = get_personal_data()  # type: ignore
 
+        # Unpacking values from feature6
+        street_, apartment_number_, postal_code_, city_, country_ = get_user_address()  # type: ignore
+
         # Prepare functions to save to json
         data = {
             # feature1
@@ -49,6 +53,12 @@ def main():
             "phone": phone,
             "pesel": pesel,
             "license_number": license_number,
+            # feature6
+            "street_": street_,
+            "apartment_number_": apartment_number_,
+            "postal_code_": postal_code_,
+            "city_": city_,
+            "country_": country_,
         }
 
         # JSON user_data_writer
