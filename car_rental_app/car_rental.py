@@ -134,8 +134,8 @@ class CarRental:
 
     def summary(self):
         rental_days = self.rental_period.rental_days()
-        total_rental_cost = self.car_category.total_cost
-        total_extras_cost = self.extras.total_cost()
+        total_rental_cost = self.car_category.total_cost # type: ignore
+        total_extras_cost = self.extras.total_cost() # type: ignore
         total_cost = total_rental_cost + total_extras_cost
 
         print("\nPodsumowanie rezerwacji:")

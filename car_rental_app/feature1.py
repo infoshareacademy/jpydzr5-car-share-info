@@ -1,7 +1,7 @@
 import re
 
 
-def get_rental_location() -> tuple | None:
+def get_rental_location() -> tuple | bool:
     try:
         street: str = input("[1/12] Podaj ulicę odbioru: ")
         if not re.match(r"^\D+$", street):
@@ -22,6 +22,7 @@ def get_rental_location() -> tuple | None:
         return street, postal_code, city
     except Exception as e:
         print(e)
+        return False
 
 
 def main():
