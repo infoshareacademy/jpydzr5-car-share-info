@@ -7,7 +7,7 @@ from feature6 import get_user_address
 from json_handler import json_user_data_reader, json_user_data_writer
 
 
-def main():
+def rental_app():
     try:
         # Unpacking values from feature1
         street, postal_code, city = get_rental_location()  # type: ignore
@@ -72,5 +72,28 @@ def main():
         return e
 
 
+def main():
+    try:
+        context_menu: int = int(
+            input(
+                "Witaj w naszej wypożyczalni samochodów!\n"
+                "[1/3] Sprawdź ofertę\n"
+                "[2/3] Dokonaj rezerwacji\n"
+                "[3/3] Przejrzyj szczegóły rezerwacji\n"
+                "Wybierz opcję (1/2/3): "
+            )
+        )
+    except ValueError:
+        print("Nieprawidłowa opcja. Spróbuj ponownie.")
+
+    if context_menu == 2:
+        rental_app()
+
+
 if __name__ == "__main__":
     main()
+
+# BUG: missing regex for apartment_number [feature6]
+# BUG: there's no minimal rental period [feature2]
+# BUG: end_date can be past start_date [feature2]
+# BUG: missing prices for rental [feature3, feature4]

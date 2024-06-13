@@ -79,9 +79,6 @@ def get_rental_period() -> tuple | bool:
 def main():
     print(get_rental_period())
 
-    # BUG: there's no minimal rental period
-    # BUG: end_date can be past start_date
-
 
 if __name__ == "__main__":
     main()
