@@ -392,15 +392,15 @@ def car_list() -> list | Exception:
         return e
 
 
-def formatted_car_list(car_data=car_list()) -> str | Exception:
+def formatted_car_list(car_data=car_list()) -> list[str] | Exception:
     try:
-        formatted_output = ""
+        formatted_output = []
 
         for car in car_data:  # type: ignore
             brand = car["brand"]
             model = car["model"]
             category = car["car_category"]
-            formatted_output += f"{category}: {brand} {model}\n"
+            formatted_output.append(f"{category}: {brand} {model}")
 
         return formatted_output
     except Exception as e:
@@ -436,7 +436,10 @@ def main():
     print()  # empty
 
     # Print formatted car examples
-    print(formatted_car_list())
+    # print(sorted(formatted_car_list()))
+
+    for car in sorted(formatted_car_list()):  # type: ignore
+        print(car)
 
 
 if __name__ == "__main__":
