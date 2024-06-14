@@ -125,11 +125,15 @@ def main():
 if __name__ == "__main__":
     main()
 
-# BUG: missing logic with renting a car by user [main, car_template]
-# BUG: there's no minimal rental period [feature2]
-# BUG: end_date can be past start_date [feature2]
-# BUG: categories from feature3 could be automated. Based on car_template[feature3]
-# BUG: missing prices for rental [feature3, feature4]
-# BUG: missing regex for apartment_number [feature6]
-# BUG: feature7 is a copy of feature3 without logic, it is not automated [feature7]
-# BUG: pytest is not working as expected [pytest]
+# BUG: Missing logic with renting a car by user. [main, car_template]
+# BUG: There's no minimal rental period. [feature2]
+# BUG: End_date can be past start_date. [feature2]
+# BUG: Categories from feature3 could be automated. Based on car_template. [feature3]
+# BUG: Missing prices for rental. [feature3, feature4]
+# BUG: Missing regex for apartment_number. [feature6]
+# BUG: feature7 is a copy of feature3 without logic, it is not automated. [feature7]
+# BUG: pytest is not working as expected. [pytest]
+# BUG: Calculator for evaluating how much user would have to pay, including rental days, hours & mileage treshold. It should be available for user & superuser. It would be used implicitly to calc car rental cost. [app]
+# BUG: UI for superuser with availability to browse list of all cars, their status, current rentals and availability to assign / change car for user before initial due date. [app]
+# BUG: Forms for returning a car. [app]
+# BUG: Mock payment status. If payment completed, confirmation should be generated for user with car details. [app]
