@@ -1,4 +1,4 @@
-def show_offer():
+def show_offer() -> None:
     categories = {
         "Compact": {
             "price": 90.00,
