@@ -435,9 +435,7 @@ def main():
     print(f"Model: {car_catalog['id_017']['model']}")  # type: ignore
     print()  # empty
 
-    # Print formatted car examples
-    # print(sorted(formatted_car_list()))
-
+    # Print formatted list of cars
     for car in sorted(formatted_car_list()):  # type: ignore
         print(car)
 
