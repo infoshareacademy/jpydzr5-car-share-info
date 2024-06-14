@@ -375,102 +375,36 @@ id_017 = Vehicle(
 )
 
 
-# car_category
-def car_categories() -> list:
-    category_list = []
-    category_list.append(id_001.car_category)
-    category_list.append(id_002.car_category)
-    category_list.append(id_003.car_category)
-    category_list.append(id_004.car_category)
-    category_list.append(id_005.car_category)
-    category_list.append(id_006.car_category)
-    category_list.append(id_007.car_category)
-    category_list.append(id_008.car_category)
-    category_list.append(id_009.car_category)
-    category_list.append(id_010.car_category)
-    category_list.append(id_011.car_category)
-    category_list.append(id_012.car_category)
-    category_list.append(id_013.car_category)
-    category_list.append(id_014.car_category)
-    category_list.append(id_015.car_category)
-    category_list.append(id_016.car_category)
-    category_list.append(id_017.car_category)
+def car_list() -> list | Exception:
+    try:
+        car_attributes = ["brand", "model", "car_category"]
+        car_data = []
 
-    # Convert list to the set to avoid duplicates
-    category_set = set(category_list)
-    category_list = list(category_set)
+        for i in range(1, 18):
+            car_id = f"id_{i:03}"
+            car_info = {}
+            for attribute in car_attributes:
+                car_info[attribute] = getattr(globals()[car_id], attribute, None)
+            car_data.append(car_info)
 
-    # Return argument
-    return sorted(category_list)
+        return car_data
+    except Exception as e:
+        return e
 
 
-# car_examples brand
-def car_examples() -> list:
-    # brand
-    brand_list = []
-    brand_list.append(id_001.brand)
-    brand_list.append(id_002.brand)
-    brand_list.append(id_003.brand)
-    brand_list.append(id_004.brand)
-    brand_list.append(id_005.brand)
-    brand_list.append(id_006.brand)
-    brand_list.append(id_007.brand)
-    brand_list.append(id_008.brand)
-    brand_list.append(id_009.brand)
-    brand_list.append(id_010.brand)
-    brand_list.append(id_011.brand)
-    brand_list.append(id_012.brand)
-    brand_list.append(id_013.brand)
-    brand_list.append(id_014.brand)
-    brand_list.append(id_015.brand)
-    brand_list.append(id_016.brand)
-    brand_list.append(id_017.brand)
+def formatted_car_list(car_data=car_list()) -> str | Exception:
+    try:
+        formatted_output = ""
 
-    # model
-    model_list = []
-    model_list.append(id_001.model)
-    model_list.append(id_002.model)
-    model_list.append(id_003.model)
-    model_list.append(id_004.model)
-    model_list.append(id_005.model)
-    model_list.append(id_006.model)
-    model_list.append(id_007.model)
-    model_list.append(id_008.model)
-    model_list.append(id_009.model)
-    model_list.append(id_010.model)
-    model_list.append(id_011.model)
-    model_list.append(id_012.model)
-    model_list.append(id_013.model)
-    model_list.append(id_014.model)
-    model_list.append(id_015.model)
-    model_list.append(id_016.model)
-    model_list.append(id_017.model)
+        for car in car_data:  # type: ignore
+            brand = car["brand"]
+            model = car["model"]
+            category = car["car_category"]
+            formatted_output += f"{category}: {brand} {model}\n"
 
-    # category
-    category_list = []
-    category_list.append(id_001.car_category)
-    category_list.append(id_002.car_category)
-    category_list.append(id_003.car_category)
-    category_list.append(id_004.car_category)
-    category_list.append(id_005.car_category)
-    category_list.append(id_006.car_category)
-    category_list.append(id_007.car_category)
-    category_list.append(id_008.car_category)
-    category_list.append(id_009.car_category)
-    category_list.append(id_010.car_category)
-    category_list.append(id_011.car_category)
-    category_list.append(id_012.car_category)
-    category_list.append(id_013.car_category)
-    category_list.append(id_014.car_category)
-    category_list.append(id_015.car_category)
-    category_list.append(id_016.car_category)
-    category_list.append(id_017.car_category)
-
-    # Zip lists
-    zipped = zip(brand_list, model_list, category_list)
-
-    # Return argument
-    return list(zipped)
+        return formatted_output
+    except Exception as e:
+        return e
 
 
 def main():
@@ -499,10 +433,10 @@ def main():
     # Print values from the instance
     print(f"Brand: {car_catalog['id_017']['brand']}")  # type: ignore
     print(f"Model: {car_catalog['id_017']['model']}")  # type: ignore
+    print()  # empty
 
-    # Print car examples
-    for car in car_examples():
-        print(car)
+    # Print formatted car examples
+    print(formatted_car_list())
 
 
 if __name__ == "__main__":
