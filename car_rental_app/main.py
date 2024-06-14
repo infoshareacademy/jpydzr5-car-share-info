@@ -14,7 +14,7 @@ def rental_app() -> None | Exception:
         street, postal_code, city = get_rental_location()  # type: ignore
 
         # Unpacking values from feature2
-        start_date, start_time, end_date, end_time = get_rental_period()  # type: ignore
+        start_date, start_time, end_date, end_time = get_rental_period() # type: ignore
 
         # Unpacking values from feature3
         car_category = choose_car_category()
@@ -137,3 +137,4 @@ if __name__ == "__main__":
 # BUG: UI for superuser with availability to browse list of all cars, their status, current rentals and availability to assign / change car for user before initial due date. [app]
 # BUG: Forms for returning a car. [app]
 # BUG: Mock payment status. If payment completed, confirmation should be generated for user with car details. [app]
+# BUG: Changes names (features). [*]
