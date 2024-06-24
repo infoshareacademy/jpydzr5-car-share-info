@@ -1,6 +1,5 @@
 import datetime
 
-
 def get_rental_period() -> tuple | bool:
     # start date
     try:
@@ -66,9 +65,7 @@ def get_rental_period() -> tuple | bool:
         )
         return False
 
-    if start_time >= end_time:
-        print("Data zwrotu nie może być taka sama lub wcześniejsza od daty wynajmu.")
-        return False
+
 
     # convert data type to str
     start_date = start_date.strftime("%Y-%m-%d")
@@ -76,9 +73,12 @@ def get_rental_period() -> tuple | bool:
     end_date = end_date.strftime("%Y-%m-%d")
     end_time = end_time.strftime("%H:%M")
 
+    if start_date >= end_date:
+        print("Data zwrotu nie może być taka sama lub wcześniejsza od daty wynajmu.")
+        return False
+
     # return arguments
     return start_date, start_time, end_date, end_time
-
 
 def main():
     print(get_rental_period())
