@@ -2,20 +2,20 @@ import os
 import sqlite3
 
 def connect_to_database(db_file):
-    """ Funkcja łączy się z bazą danych SQLite i zwraca obiekt połączenia """
+    """ Establishes a connection to the SQLite database and returns the connection object """
     conn = sqlite3.connect(db_file)
     return conn
 
 def close_database_connection(conn):
-    """ Funkcja zamyka połączenie z bazą danych """
+    """ Closes the connection to the SQLite database """
     conn.close()
 
 def fetch_cars_data(conn):
-    """ Funkcja wykonuje zapytanie SQL i zwraca wyniki """
+    """ Executes an SQL query and returns the results """
     try:
         cursor = conn.cursor()
 
-        # Zapytanie SQL do pobrania danych z tabeli cars i car_categories
+        # SQL query to fetch data from the cars and car_categories tables
         query = """SELECT 
                         cc.description AS category, 
                         cc.price AS price, 
@@ -35,21 +35,21 @@ def fetch_cars_data(conn):
 
 def show_offer(db_file):
     try:
-        # Połączenie z bazą danych
+        # Connect to the database
         conn = connect_to_database(db_file)
 
-        # Pobranie danych z bazy danych
+        # Fetch data from the database
         rows = fetch_cars_data(conn)
 
         if rows:
-            # Przetwarzanie wyników zapytania i wyświetlanie oferty
+            # Display the fetched data
             print("Nasza oferta samochodów podzielona na kategorie:")
 
             current_category = None
             for category, price, brand, model in rows:
                 if category != current_category:
                     if current_category is not None:
-                        print()  # nowa linia między kategoriami
+                        print()  # New line between categories
                     print(f"* Kategoria {category}:")
                     current_category = category
 
@@ -63,12 +63,20 @@ def show_offer(db_file):
     except sqlite3.Error as e:
         print(f"Wystąpił problem z bazą danych SQLite: {e}")
 
+
 def main():
-    # os.path.dirname(__file__) zwraca katalog, w którym znajduje się aktualny skrypt Python.
-    # os.path.dirname(os.path.dirname(__file__)) dodatkowo przechodzi o jeden poziom wyżej, aby znaleźć katalog nadrzędny w stosunku do katalogu, w którym znajduje się skrypt Python.
-    # os.path.join(..., 'car_rental') łączy ścieżkę do pliku db.sqlite3 w katalogu car_rental.
+    # os.path.dirname(__file__)
+    #  - returns the directory where the current Python script is located.
+    # os.path.dirname(os.path.dirname(__file__))
+    #  - goes one level up to find the parent directory relative to the directory where the Python script is located.
+    # os.path.join(..., 'car_rental')
+    #  - combines the path to the db.sqlite3 file in the car_rental directory.
+
     db_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'db.sqlite3')
+
+    # Call the function to display the car offer using the constructed database file path
     show_offer(db_file)
+
 
 if __name__ == "__main__":
     main()
