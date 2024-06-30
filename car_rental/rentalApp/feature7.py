@@ -1,40 +1,81 @@
-def show_offer() -> None:
-    categories = {
-        "Compact": {
-            "price": 90.00,
-            "examples": ["Toyota Corolla", "Volkswagen Golf", "Opel Astra"],
-        },
-        "Economy": {
-            "price": 80.00,
-            "examples": ["Toyota Yaris", "Volkswagen Polo", "Opel Corsa"],
-        },
-        "Medium": {
-            "price": 100.00,
-            "examples": ["BMW 3", "Audi A4", "Mercedes-Benz Class C"],
-        },
-        "Mini": {"price": 70.00, "examples": ["Toyota Aygo", "Fiat 500"]},
-        "SUV": {"price": 120.00, "examples": ["Toyota RAV4", "BMW X3", "Audi Q3"]},
-    }
+import os
+import sqlite3
 
-    print("Nasza oferta samochodów podzielonych na kategorie.")
-    for category, car_info in categories.items():
-        price = car_info["price"]
-        examples = car_info["examples"]
+def connect_to_database(db_file):
+    """ Establishes a connection to the SQLite database and returns the connection object """
+    conn = sqlite3.connect(db_file)
+    return conn
 
-        # Print category header
-        print(f"\n* Kategoria {category}:")
+def close_database_connection(conn):
+    """ Closes the connection to the SQLite database """
+    conn.close()
 
-        # Print price information
-        print(f"\n\tW cenie {price:.2f}$")
+def fetch_cars_data(conn):
+    """ Executes an SQL query and returns the results """
+    try:
+        cursor = conn.cursor()
 
-        # Print car examples
-        print("\tPrzykłady samochodów:")
-        for example in examples:
-            print(f"\t\t- {example}")
+        # SQL query to fetch data from the cars and car_categories tables
+        query = """SELECT 
+                        cc.description AS category, 
+                        cc.price AS price, 
+                        c.brand AS brand,
+                        c.model AS model
+                    FROM cars c
+                    LEFT JOIN car_categories cc ON cc.cat_id = c.car_category
+                """
+        cursor.execute(query)
+        rows = cursor.fetchall()
+
+        return rows
+
+    except sqlite3.Error as e:
+        print(f"Wystąpił problem z bazą danych SQLite: {e}")
+        return None
+
+def show_offer(db_file):
+    try:
+        # Connect to the database
+        conn = connect_to_database(db_file)
+
+        # Fetch data from the database
+        rows = fetch_cars_data(conn)
+
+        if rows:
+            # Display the fetched data
+            print("Nasza oferta samochodów podzielona na kategorie:")
+
+            current_category = None
+            for category, price, brand, model in rows:
+                if category != current_category:
+                    if current_category is not None:
+                        print()  # New line between categories
+                    print(f"* Kategoria {category}:")
+                    current_category = category
+
+                print(f"\n\tMarka: {brand}")
+                print(f"\tModel: {model}")
+                print(f"\tCena: {price:.2f}$")
+
+        # Zamknięcie połączenia z bazą danych
+        close_database_connection(conn)
+
+    except sqlite3.Error as e:
+        print(f"Wystąpił problem z bazą danych SQLite: {e}")
 
 
 def main():
-    show_offer()
+    # os.path.dirname(__file__)
+    #  - returns the directory where the current Python script is located.
+    # os.path.dirname(os.path.dirname(__file__))
+    #  - goes one level up to find the parent directory relative to the directory where the Python script is located.
+    # os.path.join(..., 'car_rental')
+    #  - combines the path to the db.sqlite3 file in the car_rental directory.
+
+    db_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'db.sqlite3')
+
+    # Call the function to display the car offer using the constructed database file path
+    show_offer(db_file)
 
 
 if __name__ == "__main__":
