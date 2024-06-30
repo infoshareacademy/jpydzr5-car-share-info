@@ -22,8 +22,8 @@ def rental_app() -> None | Exception:
             raise
 
         # Unpacking values from feature4
-        insurance = choose_extras()
-        if insurance is False:
+        extras = choose_extras()
+        if extras is False:
             raise
 
         # Unpacking values from feature5
@@ -46,7 +46,7 @@ def rental_app() -> None | Exception:
             # feature3
             "car_category": car_category,
             # feature4
-            "insurance": insurance,
+            "extras": extras,
             # feature5
             "first_name": first_name,
             "last_name": last_name,
@@ -71,22 +71,45 @@ def rental_app() -> None | Exception:
 
 def main():
     try:
-        context_menu: int = int(
-            input(
-                "Witaj w naszej wypożyczalni samochodów!\n"
-                "\n[1/3] Sprawdź ofertę\n"
-                "[2/3] Dokonaj rezerwacji\n"
-                "[3/3] Przejrzyj szczegóły rezerwacji\n"
-                "\n* Wybierz opcję (1/2/3): "
-            )
-        )
+        mode = input(
+            "Wybierz tryb procesu:\nUSER: Użytkownik\nADMIN: Administrator\n\nWpisz USER lub ADMIN: ").strip().upper()
 
-        if context_menu in [1, 2, 3]:
-            if context_menu == 1:
+        if mode == "ADMIN":
+            context_admin_menu: int = int(
+                input(
+                    "\nWybierz opcję:\n"
+                    "1. Wgraj listę aut do zasobu\n"
+                    "2. Edytuj zamówienie\n"
+                    "\n* Wybierz opcję (1/2): "
+                )
+            )
+            if context_admin_menu == 1:
+                print("Wybrano: Wgraj listę aut do zasobu")
+                # Dodaj logikę do wgrania listy aut do zasobu
+            elif context_admin_menu == 2:
+                print("Wybrano: Edytuj zamówienie")
+                # Dodaj logikę do edytowania zamówienia
+            else:
+                print("Nieprawidłowy wybór. Spróbuj ponownie.")
+                return False
+
+        elif mode == "USER":
+            context_rent_menu: int = int(
+                input(
+                    "Witaj w naszej wypożyczalni samochodów!\n"
+                    "\n[1/3] Sprawdź ofertę\n"
+                    "[2/3] Dokonaj rezerwacji\n"
+                    "[3/3] Przejrzyj szczegóły rezerwacji\n"
+                    "\n* Wybierz opcję (1/2/3): "
+                )
+            )
+
+        if context_rent_menu in [1, 2, 3]:
+            if context_rent_menu == 1:
                 show_offer()
-            if context_menu == 2:
+            if context_rent_menu == 2:
                 rental_app()
-            if context_menu == 3:
+            if context_rent_menu == 3:
                 context = [
                     "1. Ulica odbioru",
                     "2. Kod pocztowy",
