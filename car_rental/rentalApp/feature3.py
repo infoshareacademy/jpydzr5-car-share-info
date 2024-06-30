@@ -1,69 +1,107 @@
-def choose_car_category() -> str | bool:
-    categories = {
-        "Compact": {
-            "price": 90.00,
-            "examples": ["Toyota Corolla", "Volkswagen Golf", "Opel Astra"],
-        },
-        "Economy": {
-            "price": 80.00,
-            "examples": ["Toyota Yaris", "Volkswagen Polo", "Opel Corsa"],
-        },
-        "Medium": {
-            "price": 100.00,
-            "examples": ["BMW 3", "Audi A4", "Mercedes-Benz Class C"],
-        },
-        "Mini": {"price": 70.00, "examples": ["Toyota Aygo", "Fiat 500"]},
-        "SUV": {"price": 120.00, "examples": ["Toyota RAV4", "BMW X3", "Audi Q3"]},
-    }
+import os
+import sqlite3
 
-    print("[8/20] Dostępne kategorie aut:")
+def connect_to_database(db_file):
+    """ Establishes a connection to the SQLite database and returns the connection object """
+    conn = sqlite3.connect(db_file)
+    return conn
 
-    for category, car_info in categories.items():
-        price = car_info["price"]
-        examples = car_info["examples"]
-
-        # Print category header
-        print(f"\n{category}:")
-
-        # Print price information
-        print(f"\tW cenie {price:.2f}$")
-
-        # Print car examples
-        print("\tPrzykłady samochodów:")
-        for example in examples:
-            print(f"\t\t- {example}")
-
+def fetch_cars_data(conn):
     try:
+        cursor = conn.cursor()
+        query = """
+            SELECT 
+                cc.description AS category, 
+                cc.price AS price, 
+                c.brand AS brand,
+                c.model AS model
+            FROM cars c
+            LEFT JOIN car_categories cc ON cc.cat_id = c.car_category
+        """
+        cursor.execute(query)
+        return cursor.fetchall()
+    except sqlite3.Error as e:
+        print(f"Error fetching data: {e}")
+        return []
+def choose_car_category(db_file) -> str | bool:
+    try:
+        # Connect to the database
+        conn = connect_to_database(db_file)
+        if not conn:
+            return False
+
+        # Fetch data from the database
+        rows = fetch_cars_data(conn)
+        if not rows:
+            return False
+
+        # Initialize categories dictionary
+        categories = {}
+
+        # Process query results
+        for row in rows:
+            category = row[0]
+            price = row[1]
+            brand_model = f"{row[2]} {row[3]}"
+
+            if category not in categories:
+                categories[category] = {"price": price, "examples": []}
+
+            categories[category]["examples"].append(brand_model)
+
+        # Close the database connection
+        conn.close()
+
+        # Print available categories
+        print("[8/20] Dostępne kategorie aut:")
+
+        for category, car_info in categories.items():
+            price = car_info["price"]
+            examples = car_info["examples"]
+
+            # Print category header
+            print(f"\n{category}:")
+
+            # Print price information
+            print(f"\tW cenie {price:.2f}$ za dzień")
+
+            # Print car examples
+            print("\tModele dostępne w kategorii:")
+            for example in examples:
+                print(f"\t\t- {example}")
+
+        # Prompt user for input
         car_category: str = input(
             "Wybierz kategorię auta (Compact, Economy, Medium, Mini, SUV)\nWpisz tutaj: "
         )
 
-        car_category = car_category.lower()
-        if car_category == "compact":
-            car_category = "Compact"
-        elif car_category == "economy":
-            car_category = "Economy"
-        elif car_category == "medium":
-            car_category = "Medium"
-        elif car_category == "mini":
-            car_category = "Mini"
-        elif car_category == "suv":
-            car_category = "SUV"
+        # Normalize user input
+        car_category = car_category.capitalize()
 
         if car_category not in categories.keys():
-            raise ValueError
+            raise ValueError("Nieprawidłowa kategoria.")
 
-        else:
-            print(f"Wybrano kategorię: {car_category}")
-            return car_category
+        print(f"Wybrano kategorię: {car_category}")
+        return car_category
 
-    except ValueError:
-        print("Nieprawidłowy wybór. Spróbuj ponownie.")
+    except ValueError as ve:
+        print(f"Nieprawidłowy wybór: {ve}. Spróbuj ponownie.")
+        return False
+    except Exception as e:
+        print(f"An error occurred: {e}")
         return False
 
-
 def main():
-    choose_car_category()
+    # os.path.dirname(__file__)
+    #  - returns the directory where the current Python script is located.
+    # os.path.dirname(os.path.dirname(__file__))
+    #  - goes one level up to find the parent directory relative to the directory where the Python script is located.
+    # os.path.join(..., 'car_rental')
+    #  - combines the path to the db.sqlite3 file in the car_rental directory.
+
+    db_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'db.sqlite3')
+
+    choose_car_category(db_file)
 
 
 if __name__ == "__main__":
