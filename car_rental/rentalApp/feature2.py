@@ -1,5 +1,5 @@
 import datetime
-
+from datetime import timedelta
 
 def get_rental_period() -> tuple | bool:
     # start date
@@ -66,6 +66,21 @@ def get_rental_period() -> tuple | bool:
         )
         return False
 
+    # set minimal rental period
+    min_rent_date = timedelta(days=1)
+
+    diff_rent_date = end_date - start_date
+
+    # check if minimal rental period and correct dates are preserved
+    if start_date >= end_date:
+        print("Data zwrotu nie może być taka sama lub wcześniejsza od daty wynajmu.")
+        return False
+    elif diff_rent_date <= min_rent_date:
+        print("Czas wynajmu nie może być krótszy niż 1 dzień.")
+        return False
+    else:
+        pass
+
     # convert data type to str
     start_date = start_date.strftime("%Y-%m-%d")
     start_time = start_time.strftime("%H:%M")
@@ -74,7 +89,6 @@ def get_rental_period() -> tuple | bool:
 
     # return arguments
     return start_date, start_time, end_date, end_time
-
 
 def main():
     print(get_rental_period())
