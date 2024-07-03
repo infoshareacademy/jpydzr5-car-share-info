@@ -1,13 +1,8 @@
-import os
-import sqlite3
+from database_handler import connect_to_database, close_database_connection
 
-def connect_to_database(db_file):
-    """ Establishes a connection to the SQLite database and returns the connection object """
-    conn = sqlite3.connect(db_file)
-    return conn
 
-def fetch_extras_data(db_file):
-    conn = connect_to_database(db_file)
+def fetch_extras_data():
+    conn = connect_to_database()
 
     try:
         cursor = conn.cursor()
@@ -24,10 +19,13 @@ def fetch_extras_data(db_file):
     except sqlite3.Error as e:
         print(f"Error fetching data: {e}")
         return []
+    finally:
+        close_database_connection(conn)
 
-def choose_extras(db_file) -> str | bool:
+
+def choose_extras() -> str | bool:
     # Fetch extras data from the database
-    extras = fetch_extras_data(db_file)
+    extras = fetch_extras_data()
     if not extras:
         return False
 
@@ -62,16 +60,7 @@ def choose_extras(db_file) -> str | bool:
 
 
 def main():
-    # os.path.dirname(__file__)
-    #  - returns the directory where the current Python script is located.
-    # os.path.dirname(os.path.dirname(__file__))
-    #  - goes one level up to find the parent directory relative to the directory where the Python script is located.
-    # os.path.join(..., 'car_rental')
-    #  - combines the path to the db.sqlite3 file in the car_rental directory.
-
-    db_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'db.sqlite3')
-
-    choose_extras(db_file)
+    choose_extras()
 
 
 if __name__ == "__main__":
