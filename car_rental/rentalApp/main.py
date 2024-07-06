@@ -1,10 +1,10 @@
-from feature1 import get_rental_location
-from feature2 import get_rental_period
-from feature3 import choose_car_category
-from feature4 import choose_extras
-from feature5 import get_personal_data
-from feature6 import get_user_address
-from feature7 import show_offer
+from rental_location_1 import get_rental_location
+from rental_period_2 import get_rental_period
+from car_database_connection_3 import choose_car_category
+from extras_database_connection_4 import choose_extras
+from user_personal_data_5 import get_personal_data
+from user_adress_data_6 import get_user_address
+from offer_7 import show_offer
 from json_handler import json_user_data_reader, json_user_data_writer
 
 
