@@ -1,36 +1,42 @@
 from rental_location_1 import get_rental_location
 from rental_period_2 import get_rental_period
-from car_database_connection_3 import choose_car_category
 from extras_database_connection_4 import choose_extras
 from user_personal_data_5 import get_personal_data
 from user_adress_data_6 import get_user_address
 from offer_7 import show_offer
 from json_handler import json_user_data_reader, json_user_data_writer
+from car_database_connection_3 import choose_car_category
+import os
 
-
-def rental_app() -> None | Exception:
+def rental_app(db_file: str) -> None | Exception:
     try:
         # Unpacking values from feature1
         street, postal_code, city = get_rental_location()  # type: ignore
+        print(f"Miejsce wynajmu: {street}, {postal_code}, {city}")
 
         # Unpacking values from feature2
-        start_date, start_time, end_date, end_time = get_rental_period() # type: ignore
+        start_date, start_time, end_date, end_time = get_rental_period()  # type: ignore
+        print(f"Czas wynajmu: {start_date} {start_time} to {end_date} {end_time}")
 
         # Unpacking values from feature3
-        car_category = choose_car_category()
+        car_category = choose_car_category(db_file)  # type: ignore
         if car_category is False:
-            raise
+            raise ValueError("Car category selection failed.")
+        print(f"Wybrana kategoria: {car_category}")
 
         # Unpacking values from feature4
-        extras = choose_extras()
+        extras = choose_extras(db_file)
         if extras is False:
-            raise
+            raise ValueError("Extras selection failed.")
+        print(f"Extras: {extras}")
 
         # Unpacking values from feature5
         first_name, last_name, email, phone, pesel, license_number = get_personal_data()  # type: ignore
+        print(f"Personal data: {first_name} {last_name}, {email}, {phone}, {pesel}, {license_number}")
 
         # Unpacking values from feature6
         street_, apartment_number_, postal_code_, city_, country_ = get_user_address()  # type: ignore
+        print(f"User address: {street_}, {apartment_number_}, {postal_code_}, {city_}, {country_}")
 
         # Prepare functions to save to json
         data = {
@@ -66,8 +72,8 @@ def rental_app() -> None | Exception:
         json_user_data_writer(path="json/user_data.json", function_data=data)
 
     except Exception as e:
+        print(f"An error occurred: {e}")
         return e
-
 
 def main():
     try:
@@ -108,7 +114,8 @@ def main():
             if context_rent_menu == 1:
                 show_offer()
             if context_rent_menu == 2:
-                rental_app()
+                db_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'db.sqlite3')
+                rental_app(db_file)
             if context_rent_menu == 3:
                 context = [
                     "1. Ulica odbioru",
@@ -144,20 +151,6 @@ def main():
     except ValueError:
         print("Nieprawidłowa opcja. Spróbuj ponownie.")
 
-
 if __name__ == "__main__":
     main()
 
-# BUG: Missing logic with renting a car by user. [main, car_template]
-# BUG: There's no minimal rental period. [feature2]
-# BUG: End_date can be past start_date. [feature2]
-# BUG: Categories from feature3 could be automated. Based on car_template. [feature3]
-# BUG: Missing prices for rental. [feature3, feature4]
-# BUG: Missing regex for apartment_number. [feature6]
-# BUG: feature7 is a copy of feature3 without logic, it is not automated. [feature7]
-# BUG: pytest is not working as expected. [pytest]
-# BUG: Calculator for evaluating how much user would have to pay, including rental days, hours & mileage treshold. It should be available for user & superuser. It would be used implicitly to calc car rental cost. [app]
-# BUG: UI for superuser with availability to browse list of all cars, their status, current rentals and availability to assign / change car for user before initial due date. [app]
-# BUG: Forms for returning a car. [app]
-# BUG: Mock payment status. If payment completed, confirmation should be generated for user with car details. [app]
-# BUG: Changes names (features). [*]

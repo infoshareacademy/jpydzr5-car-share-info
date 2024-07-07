@@ -1,7 +1,7 @@
 # jpydzr5-car-share-info
 
 ## Pomocne linki
-Link: [jira board](git@github.com:infoshareacademy/jpydzr5-car-share-info.git)\
+Link: [jira board](https://jira.is-academy.pl/secure/RapidBoard.jspa?projectKey=JPYDZR5CSI&useStoredSettings=true&rapidView=735)\
 Link: [github repo](https://github.com/infoshareacademy/jpydzr5-car-share-info)\
 Link: [cookiecutter](https://github.com/cookiecutter/cookiecutter-django)\
 Link: [mockup w draw.io](https://drive.google.com/file/d/10rDNeEZyQgdcHb7olGP9QSdKDun1KvkD/view?usp=sharing)
