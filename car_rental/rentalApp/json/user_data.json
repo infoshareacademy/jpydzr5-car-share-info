@@ -1,11 +1,11 @@
 {
-    "street": "Zielna 666",
-    "postal_code": "22-666",
+    "street": "Zielna",
+    "postal_code": "22-222",
     "city": "Góra Kalwaria",
     "start_date": "2024-10-10",
-    "start_time": "20:00",
+    "start_time": "12:00",
     "end_date": "2024-10-17",
-    "end_time": "22:00",
+    "end_time": "20:00",
     "car_category": 4,
     "extras": "1",
     "first_name": "Marek",
@@ -14,9 +14,9 @@
     "phone": "555666777",
     "pesel": "87021005862",
     "license_number": "XYZ98765",
-    "street_": "Ogrodowa",
-    "apartment_number_": "666",
-    "postal_code_": "22-000",
+    "street_": "Polna",
+    "apartment_number_": "11",
+    "postal_code_": "22-666",
     "city_": "Warszawa",
     "country_": "Polska"
 }

@@ -18,7 +18,7 @@ from user_address_data_6 import get_user_address
 from user_personal_data_5 import get_personal_data
 
 
-def rental_app() -> None | Exception:
+def rental_app() -> str | None | Exception:
     conn = connect_to_database()
     try:
         # Create preorder at the beginning of the process
@@ -106,6 +106,7 @@ def rental_app() -> None | Exception:
 
         # JSON user_data_writer
         json_user_data_writer(path="json/user_data.json", function_data=data)
+        return "summary"
 
     except Exception as e:
         return e
@@ -152,9 +153,8 @@ def main():
                 if context_rent_menu == 1:
                     show_offer()
                 if context_rent_menu == 2:
-                    rental_app()
-                    # SUMMARY
-                    print(summary())
+                    if rental_app() == "summary":
+                        print(summary())
                 if context_rent_menu == 3:
                     context = [
                         "1. Ulica odbioru",
