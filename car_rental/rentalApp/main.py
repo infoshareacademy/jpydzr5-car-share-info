@@ -1,3 +1,11 @@
+from admin_edit_preorder_9 import select_preorder
+from database_handler import (
+    close_database_connection,
+    confirm_preorder,
+    connect_to_database,
+    create_preorder,
+    update_preorder,
+)
 from feature1 import get_rental_location
 from feature2 import get_rental_period
 from feature3 import choose_car_category
@@ -5,10 +13,10 @@ from feature4 import choose_extras
 from feature5 import get_personal_data
 from feature6 import get_user_address
 from feature7 import show_offer
-from select_user_8 import select_user
-from admin_edit_preorder_9 import select_preorder
 from json_handler import json_user_data_reader, json_user_data_writer
-from database_handler import connect_to_database, close_database_connection, create_preorder, update_preorder, confirm_preorder
+from select_user_8 import select_user
+from summary_10 import summary
+
 
 def rental_app() -> None | Exception:
     conn = connect_to_database()
@@ -19,55 +27,52 @@ def rental_app() -> None | Exception:
 
         # Unpacking values from select_user
         user_id = select_user()
-        update_preorder(conn, preorder_id, 'order_user_id', user_id[0])
+        update_preorder(conn, preorder_id, "order_user_id", user_id[0])
 
         # Unpacking values from feature1
         street, postal_code, city = get_rental_location()  # type: ignore
-        update_preorder(conn, preorder_id, 'order_street', street)
-        update_preorder(conn, preorder_id, 'order_postal_code', postal_code)
-        update_preorder(conn, preorder_id, 'order_city', city)
+        update_preorder(conn, preorder_id, "order_street", street)
+        update_preorder(conn, preorder_id, "order_postal_code", postal_code)
+        update_preorder(conn, preorder_id, "order_city", city)
 
         # Unpacking values from feature2
-        start_date, start_time, end_date, end_time = get_rental_period() # type: ignore
-        update_preorder(conn, preorder_id, 'order_start_date', start_date)
-        update_preorder(conn, preorder_id, 'order_start_time', start_time)
-        update_preorder(conn, preorder_id, 'order_end_date', end_date)
-        update_preorder(conn, preorder_id, 'order_end_time', end_time)
+        start_date, start_time, end_date, end_time = get_rental_period()  # type: ignore
+        update_preorder(conn, preorder_id, "order_start_date", start_date)
+        update_preorder(conn, preorder_id, "order_start_time", start_time)
+        update_preorder(conn, preorder_id, "order_end_date", end_date)
+        update_preorder(conn, preorder_id, "order_end_time", end_time)
 
         # Unpacking values from feature3
         car_category = choose_car_category()
         if car_category is False:
             raise Exception("Invalid car category")
-        update_preorder(conn, preorder_id, 'order_car_category', car_category)
+        update_preorder(conn, preorder_id, "order_car_category", car_category)
 
         # Unpacking values from feature4
         extras = choose_extras()
         if extras is False:
             raise Exception("Invalid extras")
-        update_preorder(conn, preorder_id, 'order_extras', extras)
+        update_preorder(conn, preorder_id, "order_extras", extras)
 
         # Unpacking values from feature5
         first_name, last_name, email, phone, pesel, license_number = get_personal_data()  # type: ignore
-        update_preorder(conn, preorder_id, 'user_first_name', first_name)
-        update_preorder(conn, preorder_id, 'user_last_name', last_name)
-        update_preorder(conn, preorder_id, 'user_email', email)
-        update_preorder(conn, preorder_id, 'user_phone', phone)
-        update_preorder(conn, preorder_id, 'user_pesel', pesel)
-        update_preorder(conn, preorder_id, 'user_license_number', license_number)
+        update_preorder(conn, preorder_id, "user_first_name", first_name)
+        update_preorder(conn, preorder_id, "user_last_name", last_name)
+        update_preorder(conn, preorder_id, "user_email", email)
+        update_preorder(conn, preorder_id, "user_phone", phone)
+        update_preorder(conn, preorder_id, "user_pesel", pesel)
+        update_preorder(conn, preorder_id, "user_license_number", license_number)
 
         # Unpacking values from feature6
         street_, apartment_number_, postal_code_, city_, country_ = get_user_address()  # type: ignore
-        update_preorder(conn, preorder_id, 'user_street', street_)
-        update_preorder(conn, preorder_id, 'user_apartment_number', apartment_number_)
-        update_preorder(conn, preorder_id, 'user_postal_code', postal_code_)
-        update_preorder(conn, preorder_id, 'user_city', city_)
-        update_preorder(conn, preorder_id, 'user_country', country_)
+        update_preorder(conn, preorder_id, "user_street", street_)
+        update_preorder(conn, preorder_id, "user_apartment_number", apartment_number_)
+        update_preorder(conn, preorder_id, "user_postal_code", postal_code_)
+        update_preorder(conn, preorder_id, "user_city", city_)
+        update_preorder(conn, preorder_id, "user_country", country_)
 
         # Confirm the order
         confirm_preorder(conn, preorder_id)
-
-        # Show confirm order details
-        # details_confirm_preorder(conn, preorder_id)
 
         # Prepare functions to save to JSON
         data = {
@@ -102,16 +107,21 @@ def rental_app() -> None | Exception:
         # JSON user_data_writer
         json_user_data_writer(path="json/user_data.json", function_data=data)
 
-
     except Exception as e:
         return e
     finally:
         close_database_connection(conn)
 
+
 def main():
     try:
-        mode = input(
-            "Wybierz tryb procesu:\nUSER: Użytkownik\nADMIN: Administrator\n\nWpisz USER lub ADMIN: ").strip().upper()
+        mode = (
+            input(
+                "Wybierz tryb procesu:\nUSER: Użytkownik\nADMIN: Administrator\n\nWpisz USER lub ADMIN: "
+            )
+            .strip()
+            .upper()
+        )
 
         if mode == "ADMIN":
             context_admin_menu: int = int(
@@ -143,6 +153,8 @@ def main():
                     show_offer()
                 if context_rent_menu == 2:
                     rental_app()
+                    # SUMMARY
+                    print(summary())
                 if context_rent_menu == 3:
                     context = [
                         "1. Ulica odbioru",
@@ -172,11 +184,15 @@ def main():
                     for key, value in data.items():
                         print(f"   * {context[counter]}: {value}")
                         counter += 1
+
+                    # SUMMARY
+                    print(summary())
             else:
                 raise ValueError
 
     except ValueError:
         print("Nieprawidłowa opcja. Spróbuj ponownie.")
+
 
 if __name__ == "__main__":
     main()
