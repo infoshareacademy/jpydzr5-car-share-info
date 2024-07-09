@@ -1,4 +1,4 @@
-from feature1 import get_rental_location
+from car_rental.rentalApp.rental_location_1 import get_rental_location
 from pytest import MonkeyPatch
 from copy import deepcopy
 
