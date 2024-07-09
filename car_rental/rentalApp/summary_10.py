@@ -1,7 +1,5 @@
 import sqlite3
 
-# Compact, Economy, Medium, Mini, SUV
-
 
 def summary():
     with sqlite3.connect("../db.sqlite3") as conn:
@@ -21,18 +19,29 @@ def summary():
             pass
 
         data = {
-            1: "Compact",
+            1: "Mini",
             2: "Economy",
-            3: "Medium",
-            4: "Mini",
-            5: "SUV",
+            3: "Compact",
+            4: "SUV",
+            5: "Medium",
         }
 
-        category = int(row[2])
-        if category in data.keys():
-            category = data[category]
+        cur.execute(
+            """
+            SELECT brand, model, license_plate_number, status
+            FROM "cars"
+            WHERE car_category = ?
+            ORDER BY car_id DESC
+            LIMIT 1;
+            """,
+            (row[2],),
+        )
 
-    return f"Twoja rezerwacja zaczyna się {row[0]} o godzinie {row[1]}. Wybrana kategoria samochodu to {category}. "
+        result = cur.fetchall()
+        for car_row in result:
+            pass
+
+    return f"Twoja rezerwacja zaczyna się {row[0]} o godzinie {row[1]}. Wybrana kategoria samochodu to {data[int(row[2])]}. \nPrzypisany samochód to {car_row[0]} {car_row[1]} z numerem rejestracyjnym {car_row[2]}."
 
 
 def main():
