@@ -4,8 +4,8 @@ from datetime import timedelta
 def get_rental_period() -> tuple | bool:
     # start date
     try:
+        print("UWAGA: Minimum okresu najmu to 1 dzień!")
         date: str = input("[4/20] Podaj datę rozpoczęcia wynajmu (YYYY-MM-DD): ")
-
         start_date = datetime.datetime.strptime(date, "%Y-%m-%d").date()
         if start_date < datetime.date.today():
             raise ValueError

@@ -106,7 +106,8 @@ def rental_app() -> str | None | Exception:
 
         # JSON user_data_writer
         json_user_data_writer(path="json/user_data.json", function_data=data)
-        return "summary"
+
+        summary(conn, preorder_id)
 
     except Exception as e:
         return e
@@ -153,8 +154,7 @@ def main():
                 if context_rent_menu == 1:
                     show_offer()
                 if context_rent_menu == 2:
-                    if rental_app() == "summary":
-                        print(summary())
+                    rental_app()
                 if context_rent_menu == 3:
                     context = [
                         "1. Ulica odbioru",
@@ -185,8 +185,6 @@ def main():
                         print(f"   * {context[counter]}: {value}")
                         counter += 1
 
-                    # SUMMARY
-                    print(summary())
             else:
                 raise ValueError
 
