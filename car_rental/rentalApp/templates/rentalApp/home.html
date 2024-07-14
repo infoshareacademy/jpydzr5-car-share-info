@@ -13,27 +13,40 @@
     <section class="nav-section">
         <nav class="navbar navbar-light navbar-expand-md bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url "home" %}">Panek</a>
+                <div class="lr-spacing">
+                    <a class="navbar-brand" href="{% url "home" %}">Panek</a>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><a href="{% url "home" %}">Panek</a></h5>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><a class="navbar-brand" href="{% url "home" %}">Panek</a></h5>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url "rent" %}">Zarezerwuj samochód</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Signup</a>
-                            </li>
+                    <div class="offcanvas-body d-flex flex-column flex-md-row align-items-center">
+                        <ul class="navbar-nav justify-content-end flex-grow-1">
+                            <div class="d-flex flex-column flex-md-row align-items-center" style="margin:0 auto;">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url "home" %}">Strona główna</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url "rent" %}">Zarezerwuj samochód</a>
+                                </li>
+                            </div>
                         </ul>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav lr-spacing justify-content-end flex-grow-1">
+                                <div class="d-flex flex-column flex-md-row align-items-center justiy-content-center">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Login</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="btn btn-success" href="#">Signup</button>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

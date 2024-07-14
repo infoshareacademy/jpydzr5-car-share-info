@@ -8,10 +8,10 @@ body {
   font-family: "Open Sans", sans-serif;
   letter-spacing: 0.2pt;
 }
-body .nav-section .offcanvas-title a {
-  text-decoration: none;
-  color: #0d6efd;
+body .nav-section .lr-spacing {
+  width: 200px;
 }
 body .nav-section .navbar-brand {
-  color: #0d6efd;
+  color: #198754;
+  text-decoration: none;
 }/*# sourceMappingURL=base.css.map */
