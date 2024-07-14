@@ -21,4 +21,26 @@ body .nav-section .offcanvas-header-bottom {
 body .nav-section .btn-signup {
   padding-top: 8px;
   padding-bottom: 8px;
+}
+body .hero-section .hero-container {
+  position: relative;
+  height: 600px;
+}
+body .hero-section .hero-container .hero-image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .hero-section .hero-container .hero-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: white;
+}
+body .hero-section .hero-container .hero-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=base.css.map */
