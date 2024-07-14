@@ -1,0 +1,24 @@
+$primary-color: #0d6efd;
+$my-letter-spacing: 0.2pt;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: $my-letter-spacing;
+    .nav-section {
+        .offcanvas-title {
+            a {
+                text-decoration: none;
+                color: $primary-color;
+            }
+        }
+        .navbar-brand {
+            color: $primary-color;
+        }
+    }
+}
