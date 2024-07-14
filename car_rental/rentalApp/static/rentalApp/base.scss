@@ -18,5 +18,12 @@ body {
             color: $primary-color;
             text-decoration: none;
         }
+        .offcanvas-header-bottom {
+            height: 62px;
+        }
+        .btn-signup {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
     }
 }

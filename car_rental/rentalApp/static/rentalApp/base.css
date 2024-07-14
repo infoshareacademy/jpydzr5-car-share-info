@@ -14,4 +14,11 @@ body .nav-section .lr-spacing {
 body .nav-section .navbar-brand {
   color: #198754;
   text-decoration: none;
+}
+body .nav-section .offcanvas-header-bottom {
+  height: 62px;
+}
+body .nav-section .btn-signup {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }/*# sourceMappingURL=base.css.map */
