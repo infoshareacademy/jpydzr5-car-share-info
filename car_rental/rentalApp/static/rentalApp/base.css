@@ -75,7 +75,7 @@ body .hero-section .hero-container .hero-image {
 }
 body .hero-section .hero-container .hero-text {
   position: absolute;
-  top: 52%;
+  top: 50%;
   transform: translateY(-50%);
   z-index: 1;
   color: white;
