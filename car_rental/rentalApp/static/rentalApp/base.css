@@ -13,7 +13,7 @@ body .nav-section {
   border: none;
 }
 body .nav-section .nav-wrapper {
-  max-width: 1400px;
+  max-width: 1250px;
 }
 body .nav-section .lr-spacing {
   width: 200px;
@@ -87,8 +87,11 @@ body .hero-section .hero-container .hero-bg {
   background-color: rgba(0, 0, 0, 0.1);
 }
 body .content-section .content-wrapper {
-  max-width: 1200px;
+  max-width: 1250px;
 }
 body .content-section .spacer {
   height: 50px;
+}
+body .content-section h2 {
+  color: #4e4e4e;
 }/*# sourceMappingURL=base.css.map */
