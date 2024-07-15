@@ -1,18 +1,18 @@
 {% extends "rentalApp/home.html" %}
 {% block title %}
-    <title>rent</title>
+    <title>contact</title>
 {% endblock title %}
 {% block switch-link %}
 <li class="nav-item px-2">
     <a class="nav-link center-link" href="{% url "home" %}">Strona główna</a>
 </li>
 <li class="nav-item px-2">
-    <a class="nav-link center-link switch-link" href="{% url "rent" %}">Zarezerwuj samochód</a>
+    <a class="nav-link center-link" href="{% url "rent" %}">Zarezerwuj samochód</a>
 </li>
 <li class="nav-item px-2">
-    <a class="nav-link center-link" href="{% url "contact" %}">Kontakt</a>
+    <a class="nav-link center-link switch-link" href="{% url "contact" %}">Kontakt</a>
 </li>
 {% endblock switch-link %}
 {% block content-section %}
-    <p>rent page</p>
+    <p>contact page</p>
 {% endblock content-section %}

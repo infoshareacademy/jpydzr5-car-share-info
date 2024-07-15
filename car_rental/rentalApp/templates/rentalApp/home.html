@@ -28,13 +28,18 @@
                     </div>
                     <div class="offcanvas-body d-flex flex-column flex-md-row align-items-center">
                         <ul class="navbar-nav justify-content-end flex-grow-1">
-                            <div class="d-flex flex-column flex-md-row align-items-center" style="margin:0 auto;">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url "home" %}">Strona główna</a>
+                            <div class="box d-flex flex-column flex-md-row align-items-center" style="margin:0 auto;">
+                                {% block switch-link %}
+                                <li class="nav-item px-2">
+                                    <a class="nav-link center-link switch-link" href="{% url "home" %}">Strona główna</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url "rent" %}">Zarezerwuj samochód</a>
+                                <li class="nav-item px-2">
+                                    <a class="nav-link center-link" href="{% url "rent" %}">Zarezerwuj samochód</a>
                                 </li>
+                                <li class="nav-item px-2">
+                                    <a class="nav-link center-link" href="{% url "contact" %}">Kontakt</a>
+                                </li>
+                                {% endblock switch-link %}
                             </div>
                         </ul>
                         <div class="offcanvas-body py-0">
@@ -44,7 +49,7 @@
                                         <a class="nav-link" href="#">Login</a>
                                     </li>
                                     <li class="nav-item">
-                                        <button type="button" class="btn btn-success btn-signup" href="#">Signup</button>
+                                        <a class="btn btn-success btn-signup" href="#" role="button">Signup</a>
                                     </li>
                                 </div>
                             </ul>

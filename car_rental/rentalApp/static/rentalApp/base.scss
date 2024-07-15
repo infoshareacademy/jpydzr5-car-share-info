@@ -1,4 +1,5 @@
 $primary-color: #198754;
+$active-color: #179b5d;
 $my-letter-spacing: 0.2pt;
 
 * {
@@ -15,16 +16,70 @@ body {
             width: 200px;
         }
         .navbar-brand {
-            color: $primary-color;
+            color: $active-color;
             text-decoration: none;
         }
         .offcanvas-header-bottom {
             height: 62px;
         }
         .btn-signup {
+            border: none;
             padding-top: 8px;
             padding-bottom: 8px;
+            background-color: $active-color;
         }
+        .btn-signup:hover {
+            background-color: $primary-color;
+        }
+        .center-link {
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .center-link,
+        .center-link::after,
+        .center-link::before {
+            // transition: width .3s .9s;
+            transition: width .3s ease-out 0s;
+        }
+
+        .center-link::after,
+        .center-link::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            bottom: 0;
+            border-bottom: 2px solid $active-color;
+        }
+
+        .center-link::after {
+            left: 50%;
+        }
+
+        .center-link::before {
+            right: 50%;
+        }
+
+        .center-link:hover::before,
+        .center-link:hover::after {
+            width: 50%;
+        }
+
+        // .nav-link:hover {
+        //     color: $primary-color;
+        //     transition: color .3s .9s;
+        // }
+
+        .switch-link {
+            color: $active-color;
+        }
+        // .btn-success {
+            background-color: $active-color;
+            border: none;
+        // }
+        // .btn-success:hover {
+        //     background-color: $primary-color;
+        // }
     }
     .hero-section {
         .hero-container {

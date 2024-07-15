@@ -8,19 +8,58 @@ body {
   font-family: "Open Sans", sans-serif;
   letter-spacing: 0.2pt;
 }
+body .nav-section {
+  background-color: #179b5d;
+  border: none;
+}
 body .nav-section .lr-spacing {
   width: 200px;
 }
 body .nav-section .navbar-brand {
-  color: #198754;
+  color: #179b5d;
   text-decoration: none;
 }
 body .nav-section .offcanvas-header-bottom {
   height: 62px;
 }
 body .nav-section .btn-signup {
+  border: none;
   padding-top: 8px;
   padding-bottom: 8px;
+  background-color: #179b5d;
+}
+body .nav-section .btn-signup:hover {
+  background-color: #198754;
+}
+body .nav-section .center-link {
+  position: relative;
+  white-space: nowrap;
+}
+body .nav-section .center-link,
+body .nav-section .center-link::after,
+body .nav-section .center-link::before {
+  transition: width 0.3s ease-out 0s;
+}
+body .nav-section .center-link::after,
+body .nav-section .center-link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom: 0;
+  border-bottom: 2px solid #179b5d;
+}
+body .nav-section .center-link::after {
+  left: 50%;
+}
+body .nav-section .center-link::before {
+  right: 50%;
+}
+body .nav-section .center-link:hover::before,
+body .nav-section .center-link:hover::after {
+  width: 50%;
+}
+body .nav-section .switch-link {
+  color: #179b5d;
 }
 body .hero-section .hero-container {
   position: relative;

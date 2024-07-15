@@ -19,3 +19,10 @@ def rent(request):
         request,
         "rentalApp/rent.html",
     )
+
+
+def contact(request):
+    return render(
+        request,
+        "rentalApp/contact.html",
+    )
