@@ -14,6 +14,7 @@ body {
     .nav-section {
         .nav-wrapper {
             max-width: 1400px;
+            // height: 50px;
         }
         .lr-spacing {
             width: 200px;
@@ -112,6 +113,9 @@ body {
     .content-section {
         .content-wrapper {
             max-width: 1200px;
+        }
+        .spacer {
+            height: 50px;
         }
     }
 }

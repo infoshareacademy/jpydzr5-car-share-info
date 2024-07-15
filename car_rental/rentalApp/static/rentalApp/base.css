@@ -88,4 +88,7 @@ body .hero-section .hero-container .hero-bg {
 }
 body .content-section .content-wrapper {
   max-width: 1200px;
+}
+body .content-section .spacer {
+  height: 50px;
 }/*# sourceMappingURL=base.css.map */
