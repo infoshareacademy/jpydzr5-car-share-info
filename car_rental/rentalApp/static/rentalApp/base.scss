@@ -12,6 +12,9 @@ body {
     font-family: "Open Sans", sans-serif;
     letter-spacing: $my-letter-spacing;
     .nav-section {
+        .nav-wrapper {
+            max-width: 1400px;
+        }
         .lr-spacing {
             width: 200px;
         }
@@ -104,6 +107,11 @@ body {
                 width: 100%;
                 background-color: rgba(0, 0, 0, .1);
             }
+        }
+    }
+    .content-section {
+        .content-wrapper {
+            max-width: 1200px;
         }
     }
 }

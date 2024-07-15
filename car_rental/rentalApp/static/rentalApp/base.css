@@ -12,6 +12,9 @@ body .nav-section {
   background-color: #179b5d;
   border: none;
 }
+body .nav-section .nav-wrapper {
+  max-width: 1400px;
+}
 body .nav-section .lr-spacing {
   width: 200px;
 }
@@ -82,4 +85,7 @@ body .hero-section .hero-container .hero-bg {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.1);
+}
+body .content-section .content-wrapper {
+  max-width: 1200px;
 }/*# sourceMappingURL=base.css.map */
