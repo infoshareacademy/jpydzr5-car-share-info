@@ -90,7 +90,7 @@ body {
     .hero-section {
         .hero-container {
             position: relative;
-            height: 600px;
+            height: 300px;
             .hero-image {
                 
                 width: 100%;
@@ -121,6 +121,27 @@ body {
         }
         h2 {
             color: $b2-color;
+        }
+        .btn-form {
+            border: none;
+            margin-top: 8px;
+            margin-bottom: 2px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background-color: $active-color;
+        }
+        .btn-form:hover {
+            background-color: $primary-color;
+        }
+        .form-wrapper {
+            max-width: 500px;
+            padding: 12px;
+            border: 1px solid rgba(128, 128, 128, 0.629);
+            border-radius: 10px;
+        }
+        .form-control {
+            margin-top: 8px;
+            margin-bottom: 8px;
         }
     }
 }
