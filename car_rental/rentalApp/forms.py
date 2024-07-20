@@ -32,5 +32,3 @@ class ContactForm(forms.Form):
 
 # TODO: Client-side required field deletion triggers the display of error messages. It should override default errors.
 # TODO: ModelForm
-# TODO: Hide button when form posted
-# TODO: Maybe successful redirect page when form posted
