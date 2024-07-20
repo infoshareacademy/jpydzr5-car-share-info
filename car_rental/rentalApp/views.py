@@ -36,6 +36,8 @@ def contact(request):
                     "message": data,
                 },
             )
+        else:
+            pass  # Handle Errors In Views
     else:
         form = ContactForm()  # Client Side Form Validation
 
