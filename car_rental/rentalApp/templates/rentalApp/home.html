@@ -16,14 +16,14 @@
         <nav class="navbar navbar-light navbar-expand-md bg-light">
             <div class="container-fluid nav-wrapper">
                 <div class="lr-spacing">
-                    <a class="navbar-brand" href="{% url "home" %}">Panek</a>
+                    <a class="navbar-brand" href="{% url "rentalApp:home" %}">Panek</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><a class="navbar-brand" href="{% url "home" %}">Panek</a></h5>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><a class="navbar-brand" href="{% url "rentalApp:home" %}">Panek</a></h5>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body d-flex flex-column flex-md-row align-items-center">
@@ -31,13 +31,13 @@
                             <div class="box d-flex flex-column flex-md-row align-items-center" style="margin:0 auto;">
                                 {% block switch-link %}
                                 <li class="nav-item px-2">
-                                    <a class="nav-link center-link switch-link" href="{% url "home" %}">Strona główna</a>
+                                    <a class="nav-link center-link switch-link" href="{% url "rentalApp:home" %}">Strona główna</a>
                                 </li>
                                 <li class="nav-item px-2">
-                                    <a class="nav-link center-link" href="{% url "rent" %}">Zarezerwuj samochód</a>
+                                    <a class="nav-link center-link" href="{% url "rentalApp:rent" %}">Zarezerwuj samochód</a>
                                 </li>
                                 <li class="nav-item px-2">
-                                    <a class="nav-link center-link" href="{% url "contact" %}">Kontakt</a>
+                                    <a class="nav-link center-link" href="{% url "rentalApp:contact" %}">Kontakt</a>
                                 </li>
                                 {% endblock switch-link %}
                             </div>

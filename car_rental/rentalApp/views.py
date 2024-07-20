@@ -1,12 +1,13 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 
 from .forms import ContactForm
 
 
 # Create your views here.
 def to_home(request):
-    return HttpResponseRedirect("/home/")
+    return HttpResponseRedirect(reverse("rentalApp:home"))
 
 
 def home(request):
@@ -64,4 +65,4 @@ def send(request):
             },
         )
     if request.method == "GET":
-        return HttpResponseRedirect("/contact/")
+        return HttpResponseRedirect(reverse("rentalApp:contact"))

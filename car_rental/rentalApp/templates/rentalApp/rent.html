@@ -4,13 +4,13 @@
 {% endblock title %}
 {% block switch-link %}
 <li class="nav-item px-2">
-    <a class="nav-link center-link" href="{% url "home" %}">Strona główna</a>
+    <a class="nav-link center-link" href="{% url "rentalApp:home" %}">Strona główna</a>
 </li>
 <li class="nav-item px-2">
-    <a class="nav-link center-link switch-link" href="{% url "rent" %}">Zarezerwuj samochód</a>
+    <a class="nav-link center-link switch-link" href="{% url "rentalApp:rent" %}">Zarezerwuj samochód</a>
 </li>
 <li class="nav-item px-2">
-    <a class="nav-link center-link" href="{% url "contact" %}">Kontakt</a>
+    <a class="nav-link center-link" href="{% url "rentalApp:contact" %}">Kontakt</a>
 </li>
 {% endblock switch-link %}
 {% block content-section %}

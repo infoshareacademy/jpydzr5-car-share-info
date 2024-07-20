@@ -4,13 +4,13 @@
 {% endblock title %}
 {% block switch-link %}
 <li class="nav-item px-2">
-    <a class="nav-link center-link" href="{% url "home" %}">Strona główna</a>
+    <a class="nav-link center-link" href="{% url "rentalApp:home" %}">Strona główna</a>
 </li>
 <li class="nav-item px-2">
-    <a class="nav-link center-link" href="{% url "rent" %}">Zarezerwuj samochód</a>
+    <a class="nav-link center-link" href="{% url "rentalApp:rent" %}">Zarezerwuj samochód</a>
 </li>
 <li class="nav-item px-2">
-    <a class="nav-link center-link switch-link" href="{% url "contact" %}">Kontakt</a>
+    <a class="nav-link center-link switch-link" href="{% url "rentalApp:contact" %}">Kontakt</a>
 </li>
 {% endblock switch-link %}
 {% block content-section %}
@@ -19,7 +19,7 @@
     <p>O czym chciałbyś nam powiedzieć?</p>
 </div>
 <div class="form-wrapper">
-    <form action="{% url "send" %}" method="POST">
+    <form action="{% url "rentalApp:send" %}" method="POST">
         {% csrf_token %}
         {{ form }}
         <button type="submit" class="btn btn-success btn-form">Wyślij</button>
