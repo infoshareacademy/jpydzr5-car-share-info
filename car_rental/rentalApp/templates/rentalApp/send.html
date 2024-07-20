@@ -1,0 +1,26 @@
+{% extends "rentalApp/home.html" %}
+{% block title %}
+    <title>send</title>
+{% endblock title %}
+{% block switch-link %}
+<li class="nav-item px-2">
+    <a class="nav-link center-link" href="{% url "home" %}">Strona główna</a>
+</li>
+<li class="nav-item px-2">
+    <a class="nav-link center-link" href="{% url "rent" %}">Zarezerwuj samochód</a>
+</li>
+<li class="nav-item px-2">
+    <a class="nav-link center-link" href="{% url "contact" %}">Kontakt</a>
+</li>
+{% endblock switch-link %}
+{% block content-section %}
+    <h2>Dziękujemy</h2>
+    <p>Formularz kontaktowy został przesłany.</p>
+    <div class="spacer"></div>
+    <div hidden class="send-container">
+        <h5>Od</h5>
+        <p>{{ firstname }} {{ lastname }} <br> {{ email_address }}</p>
+        <h5>Treść wiadomości</h5>
+        <p>{{ comment }}</p>
+    </div>
+{% endblock content-section %}

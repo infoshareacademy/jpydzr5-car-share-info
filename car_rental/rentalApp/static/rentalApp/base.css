@@ -108,8 +108,8 @@ body .content-section .btn-form:hover {
 }
 body .content-section .form-wrapper {
   max-width: 500px;
-  padding: 12px;
-  border: 1px solid rgba(128, 128, 128, 0.629);
+  padding: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.211);
   border-radius: 10px;
 }
 body .content-section .form-control {

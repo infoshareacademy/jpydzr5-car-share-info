@@ -6,7 +6,7 @@ from .forms import ContactForm
 
 # Create your views here.
 def to_home(request):
-    return HttpResponseRedirect("home")
+    return HttpResponseRedirect("/home/")
 
 
 def home(request):
@@ -45,3 +45,23 @@ def contact(request):
             "form": form,
         },
     )
+
+
+def send(request):
+    if request.method == "POST":
+        firstname = request.POST.get("firstname")
+        lastname = request.POST.get("lastname")
+        comment = request.POST.get("comment")
+        email_address = request.POST.get("email_address")
+        return render(
+            request,
+            "rentalApp/send.html",
+            {
+                "firstname": firstname,
+                "lastname": lastname,
+                "comment": comment,
+                "email_address": email_address,
+            },
+        )
+    if request.method == "GET":
+        return HttpResponseRedirect("/contact/")
