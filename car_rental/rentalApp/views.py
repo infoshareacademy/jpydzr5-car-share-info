@@ -30,7 +30,6 @@ class ContactView(FormView):
     form_class = ContactForm
     template_name = "rentalApp/contact.html"
     success_url = "rentalApp/send.html"
-    # success_url = reverse("rentalApp:send")
 
 
 # TODO: Code Below i.e contact, send
