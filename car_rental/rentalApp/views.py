@@ -24,16 +24,20 @@ def rent(request):
     )
 
 
+# TODO: Code Below i.e contact, send
+
+
 def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            data = form.cleaned_data  # Storing Cleaned Data
+            # data = form.cleaned_data  # Storing Cleaned Data
+            form.save()
             return render(
                 request,
                 "rentalApp/contact.html",
                 {
-                    "message": data,
+                    "form": form,
                 },
             )
         else:
@@ -68,3 +72,6 @@ def send(request):
         )
     if request.method == "GET":
         return HttpResponseRedirect(reverse("rentalApp:contact"))
+
+
+# TODO: New contact, send
