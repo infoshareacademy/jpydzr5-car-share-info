@@ -28,5 +28,3 @@ class ContactForm(forms.ModelForm):
 
 
 # TODO: Client-side required field deletion triggers the display of error messages. It probably should override default errors.
-# TODO: Str representation to modify object.
-# TODO: Admin Site Object Repr.
