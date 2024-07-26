@@ -1,6 +1,6 @@
 $primary-color: #198754;
 $active-color: #179b5d;
-$my-letter-spacing: 0.2pt;
+$my-letter-spacing: 0.1pt;
 $b1-color: #0e1217;
 $b2-color: #4e4e4e;
 
@@ -149,4 +149,14 @@ body {
             margin-bottom: 8px;
         }
     }
+    .footer {
+        background-color: $primary-color;
+        box-shadow: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
+    }
+    .prompt-medium {
+        font-family: "Prompt", sans-serif;
+        font-size: 1.7rem;
+        font-weight: 500;
+        font-style: normal;
+      }
 }
