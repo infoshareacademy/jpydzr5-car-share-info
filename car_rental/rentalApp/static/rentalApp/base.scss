@@ -139,6 +139,8 @@ body {
             // border: 1px solid $active-color;
             border: 1px solid rgba(128, 128, 128, 0.211);
             border-radius: 10px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            // box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
         }
         .form-control {
             margin-top: 8px;
