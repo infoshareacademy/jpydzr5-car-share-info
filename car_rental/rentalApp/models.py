@@ -8,3 +8,11 @@ class Contact(models.Model):
     message = models.TextField(max_length=1000)
     email = models.EmailField(max_length=255)
     timestamp = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
+    class Meta:
+        verbose_name = "Contact Form"
+        verbose_name_plural = "Contact Forms"
+        ordering = ["-timestamp"]
