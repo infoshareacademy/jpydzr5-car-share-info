@@ -28,3 +28,4 @@ class ContactForm(forms.ModelForm):
 
 
 # TODO: Override client-side & server-side errors.
+# TODO: Dodać miejsce opcjonalne na numer telefonu.

@@ -22,7 +22,7 @@ class Cars(models.Model):
     brand = models.CharField(max_length=255)
     model = models.CharField(max_length=255)
     year = models.IntegerField()
-    category = models.IntegerField()
+    category = models.CharField(max_length=255)
     car_plate = models.CharField(max_length=255)
     mileage = models.FloatField()
     engine_size = models.FloatField()
@@ -41,3 +41,4 @@ class Cars(models.Model):
     class Meta:
         verbose_name = "Car For Rental"
         verbose_name_plural = "Cars For Rental"
+        ordering = ["brand", "model"]

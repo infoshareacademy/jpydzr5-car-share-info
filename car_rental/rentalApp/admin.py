@@ -19,7 +19,7 @@ admin.site.register(Contact, ContactAdmin)
 
 class CarsAdmin(admin.ModelAdmin):
     model = Cars
-    list_display = ("car_name", "availability")
+    list_display = ("car_name", "category", "availability")
 
     def car_name(self, object_):
         return f"{object_.brand} {object_.model}"
