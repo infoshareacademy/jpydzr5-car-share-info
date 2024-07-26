@@ -19,7 +19,8 @@
     <p>O czym chciałbyś nam powiedzieć?</p>
 </div>
 <div class="form-wrapper">
-    <form action="{% url "rentalApp:send" %}" method="POST">
+    {% comment %} <form action="{% url "rentalApp:send" %}" method="POST"> {% endcomment %}
+    <form action="" method="post">
         {% csrf_token %}
         {{ form }}
         <button type="submit" class="btn btn-success btn-form">Wyślij</button>

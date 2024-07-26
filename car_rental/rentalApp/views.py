@@ -29,7 +29,12 @@ def rent(request):
 class ContactView(FormView):
     form_class = ContactForm
     template_name = "rentalApp/contact.html"
-    success_url = "rentalApp/send.html"
+    success_url = "/contact/send/"
+    # success_url = reverse("rentalApp:send")
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
 
 
 # TODO: Code Below i.e contact, send
@@ -63,10 +68,10 @@ class ContactView(FormView):
 
 
 def send(request):
-    if request.method == "POST":
-        return render(request, "rentalApp/send.html")
-    if request.method == "GET":
-        return HttpResponseRedirect(reverse("rentalApp:contact"))
+    # if request.method == "POST":
+    return render(request, "rentalApp/send.html")
+    # if request.method == "GET":
+    # return HttpResponseRedirect(reverse("rentalApp:contact"))
 
 
 # TODO: New contact, send
