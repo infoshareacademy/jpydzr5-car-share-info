@@ -107,7 +107,7 @@ body .content-section .btn-form:hover {
   background-color: #198754;
 }
 body .content-section .form-wrapper {
-  max-width: 500px;
+  max-width: 475px;
   padding: 20px;
   border: 1px solid rgba(128, 128, 128, 0.211);
   border-radius: 10px;

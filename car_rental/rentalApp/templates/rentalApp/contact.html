@@ -15,10 +15,10 @@
 {% endblock switch-link %}
 {% block content-section %}
 <h2>Skontaktuj się z nami</h2>
-<p>O czym chciałbyś nam powiedzieć?</p>
+<p class="pb-4">O czym chciałbyś nam powiedzieć?</p>
 <div class="row">
-    <div class="col-12 col-lg-6">
-        <div class="form-wrapper">
+    <div class="col-12 col-lg-6 d-flex flex-column flex-lg-row align-items-center pe-lg-5">
+        <div class="form-wrapper w-100">
             <form method="post">
                 {% csrf_token %}
                 {{ form }}
@@ -26,8 +26,8 @@
             </form>
         </div>
     </div>
-    <div class="col-12 col-lg-6">
-        <h2>Wypełnij formularz</h2>
+    <div class="col-12 col-lg-6 ps-lg-5">
+        <h2 class="pt-4 pt-lg-0">Wypełnij formularz</h2>
         <p>Jeżeli masz jakiekolwiek pytania dotyczące naszej oferty wynajmu samochodów, chcesz uzyskać dodatkowe informacje na temat dostępnych pojazdów lub potrzebujesz wsparcia przy rezerwacji, jesteśmy tutaj, aby Ci pomóc. Prosimy o wypełnienie poniższego formularza kontaktowego, a nasz zespół obsługi klienta skontaktuje się z Tobą tak szybko, jak to możliwe.
         <p>Aby ułatwić nam odpowiedź na Twoje pytania, prosimy o podanie jak najwięcej szczegółów w formularzu kontaktowym. Wypełnij wszystkie wymagane pola, a my postaramy się odpowiedzieć na Twoje zapytanie w możliwie najkrótszym czasie.</p>
     </div>
