@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Contact
+from .models import Cars, Contact
 
 
 # Register your models here.
@@ -15,3 +15,16 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Contact, ContactAdmin)
+
+
+class CarsAdmin(admin.ModelAdmin):
+    model = Cars
+    list_display = ("car_name", "availability")
+
+    def car_name(self, object_):
+        return f"{object_.brand} {object_.model}"
+
+    car_name.short_description = "Car"
+
+
+admin.site.register(Cars, CarsAdmin)
