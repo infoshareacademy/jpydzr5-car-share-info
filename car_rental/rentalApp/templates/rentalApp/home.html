@@ -84,7 +84,9 @@
         </div>
         <div class="spacer"></div>
     </section>
-    <footer class="footer text-white text-center py-3">
+    {% block footer-absolute %}
+    <footer class="footer text-white text-center py-3 position-absolute bottom-0 start-50 translate-middle-x w-100">
+    {% endblock footer-absolute %}
         <div class="justify-content-center align-items-center">
             <p class="mb-0">&copy; 2024 Autis. Wszystkie prawa zastrzeżone.</p>
             <p class="mb-0">
