@@ -17,7 +17,7 @@ body .nav-section .nav-wrapper {
   padding: 0px 20px 0px 20px;
 }
 body .nav-section .lr-spacing {
-  width: 200px;
+  width: 150px;
 }
 body .nav-section .navbar-brand {
   color: #179b5d;
@@ -64,6 +64,9 @@ body .nav-section .center-link:hover::after {
 }
 body .nav-section .switch-link {
   color: #179b5d;
+}
+body .hero-section {
+  padding-top: 57px;
 }
 body .hero-section .hero-container {
   position: relative;

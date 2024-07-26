@@ -20,7 +20,7 @@ body {
             // height: 50px;
         }
         .lr-spacing {
-            width: 200px;
+            width: 150px;
         }
         .navbar-brand {
             color: $active-color;
@@ -89,11 +89,11 @@ body {
         // }
     }
     .hero-section {
+        padding-top: 57px;
         .hero-container {
             position: relative;
             height: 400px;
             .hero-image {
-                
                 width: 100%;
                 // object-position: 0 20%;
                 object-fit: cover;

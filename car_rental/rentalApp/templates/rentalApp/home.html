@@ -16,7 +16,7 @@
 </head>
 <body>
     <section class="nav-section">
-        <nav class="navbar navbar-light navbar-expand-md bg-light">
+        <nav class="navbar navbar-light navbar-expand-md bg-light fixed-top">
             <div class="container-fluid nav-wrapper">
                 <div class="lr-spacing">
                     <a class="navbar-brand prompt-medium" href="{% url "rentalApp:home" %}">Autis</a>
@@ -30,7 +30,7 @@
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body d-flex flex-column flex-md-row align-items-center">
-                        <ul class="navbar-nav justify-content-end flex-grow-1">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 w-50">
                             <div class="box d-flex flex-column flex-md-row align-items-center" style="margin:0 auto;">
                                 {% block switch-link %}
                                 <li class="nav-item px-2">
