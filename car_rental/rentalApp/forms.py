@@ -27,4 +27,4 @@ class ContactForm(forms.ModelForm):
         }
 
 
-# TODO: Client-side required field deletion triggers the display of error messages. It probably should override default errors.
+# TODO: Override client-side & server-side errors.
