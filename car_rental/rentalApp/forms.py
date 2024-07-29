@@ -27,7 +27,8 @@ class ContactForm(forms.ModelForm):
         }
 
 
-# TODO: Dodać miejsce opcjonalne na numer telefonu [Form]
-# TODO: Override client-side & server-side errors [Form]
-# NOTE: Po zalogowaniu wysyłany formularz kontaktowy powinien identyfikować, że user jest zalogowany [Form]
+# TODO: Dodać miejsce opcjonalne na numer telefonu [form]
+# TODO: Override client-side & server-side errors [form]
+# NOTE: Po zalogowaniu wysyłany formularz kontaktowy powinien identyfikować, że user jest zalogowany [form]
 # NOTE: rentaladmin [admin]
+# NOTE: mysql aws [db]
