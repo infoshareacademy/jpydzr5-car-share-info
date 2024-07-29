@@ -27,6 +27,7 @@ class ContactForm(forms.ModelForm):
         }
 
 
-# TODO: Override client-side & server-side errors.
-# TODO: Dodać miejsce opcjonalne na numer telefonu.
-# NOTE: rentaladmin
+# TODO: Dodać miejsce opcjonalne na numer telefonu [Form]
+# TODO: Override client-side & server-side errors [Form]
+# NOTE: Po zalogowaniu wysyłany formularz kontaktowy powinien identyfikować, że user jest zalogowany [Form]
+# NOTE: rentaladmin [admin]
