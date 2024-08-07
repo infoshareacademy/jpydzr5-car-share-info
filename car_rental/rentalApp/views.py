@@ -29,6 +29,7 @@ class ContactView(FormView):
     form_class = ContactForm
     template_name = "rentalApp/contact.html"
     success_url = "/contact/send/"
+    # TODO: Trailing Slash
     # NOTE: Success url should use reverse funtion
 
     def form_valid(self, form):
