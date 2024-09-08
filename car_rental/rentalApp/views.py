@@ -1,8 +1,8 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
-
-from .forms import ContactForm
+from .forms import ContactForm, RentalLocationForm, RentalPeriodForm, RentalPersonalDetailsForm, RentalPersonalAddressForm
+from formtools.wizard.views import SessionWizardView
 
 
 # Create your views here.
@@ -68,3 +68,11 @@ def send(request):
         )
     if request.method == "GET":
         return HttpResponseRedirect(reverse("rentalApp:contact"))
+
+
+class CarReservationView(SessionWizardView):
+    form_list = [RentalLocationForm, RentalPeriodForm, RentalPersonalDetailsForm, RentalPersonalAddressForm]
+    template_name = 'rentalApp/rent.html'
+
+    def done(self, form_list, **kwargs):
+        return HttpResponse("Form submitted!")
