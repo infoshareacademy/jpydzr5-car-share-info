@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2>Your Profile</h2>
+<p class="pb-4">Below are your profile details. If you need to update any information, please feel free to do so.</p>
+<div class="form-wrapper w-100">
+    <form method="post" action="{% url 'user_profile' %}">
+        {% csrf_token %}
+        {{ form|crispy}}
+        <button class="btn btn-success btn-form" type="submit">Save changes</button>
+    </form>
+</div>
+{% endblock %}

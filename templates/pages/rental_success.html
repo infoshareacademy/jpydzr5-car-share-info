@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+
+{% block title %}
+    Autis - Rental Success
+{% endblock title %}
+
+{% block switch-link %}
+<li class="nav-item px-2">
+  <a class="nav-link center-link" href="{% url 'home' %}">Home page</a>
+</li>
+<li class="nav-item px-2">
+  <a class="nav-link center-link" href="{% url 'rent' %}">Rent a car</a>
+</li>
+<li class="nav-item px-2">
+  <a class="nav-link center-link" href="{% url 'contact' %}">Contact us</a>
+</li>
+{% endblock switch-link %}
+
+{% block content %}
+<h2>Rental Successful!</h2>
+<p>
+  Your rental has been successfully processed. We appreciate your business and hope you enjoy your rental experience. If
+  you have any urgent inquiries, please feel free to contact us directly at
+  <a href="mailto:support@autis.com">support@autis.com</a>. In the meantime, you can return to our
+  <a href="/">homepage</a> or explore other sections of our website.
+</p>
+<a href="/" class="btn btn-success btn-form">Return to Homepage</a>
+{% endblock content %}

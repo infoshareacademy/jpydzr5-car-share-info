@@ -1,0 +1,40 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Autis - Contact us
+{% endblock title %}
+{% block switch-link %}
+<li class="nav-item px-2">
+    <a class="nav-link center-link" href="{% url 'home' %}">Home page</a>
+</li>
+<li class="nav-item px-2">
+    <a class="nav-link center-link" href="{% url 'rent' %}">Rent a car</a>
+</li>
+<li class="nav-item px-2">
+    <a class="nav-link center-link switch-link" href="{% url 'contact' %}">Contact us</a>
+</li>
+{% endblock switch-link %}
+{% block content %}
+<h2>Contact us</h2>
+<p class="pb-4">What would you like to tell us?</p>
+<div class="row">
+    <div class="col-12 col-lg-6 d-flex flex-column flex-lg-row align-items-center pe-lg-5">
+        <div class="form-wrapper w-100">
+            <form method="post">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-success btn-form">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-12 col-lg-6 ps-lg-5">
+        <h2 class="pt-4 pt-lg-0">Fill out the form</h2>
+        <p>If you have any questions about our car rental offer, want to get more information about available vehicles, or need support with booking, we are here to help. Please fill out the contact form below, and our customer service team will contact you as soon as possible.</p>
+        <p>To help us answer your questions, please provide as much detail as possible in the contact form. Fill in all the required fields, and we will do our best to respond to your query as quickly as possible. Providing accurate and detailed information will help us serve you better and ensure a prompt response.</p>
+        <p>Our team is dedicated to providing excellent customer service, and we aim to respond to all inquiries within 24 hours. If your matter is urgent, please indicate this in your message, and we will prioritize your request. Thank you for reaching out to us, and we look forward to assisting you.</p>
+    </div>
+</div>
+<div class="spacer"></div>
+{% endblock content %}

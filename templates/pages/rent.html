@@ -1,0 +1,68 @@
+{% extends "_base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Autis - Rent a car
+{% endblock title %}
+{% block switch-link %}
+<li class="nav-item px-2">
+    <a class="nav-link center-link" href="{% url 'home' %}">Home page</a>
+</li>
+<li class="nav-item px-2">
+    <a class="nav-link center-link switch-link" href="{% url 'rent' %}">Rent a car</a>
+</li>
+<li class="nav-item px-2">
+    <a class="nav-link center-link" href="{% url 'contact' %}">Contact us</a>
+</li>
+{% endblock switch-link %}
+{% block content %}
+<h2>Rent a car</h2>
+<p class="pb-4">Please fill out the form below to rent a car. Ensure all required fields are completed accurately to avoid any delays in processing your request. Once submitted, our team will review your application and get back to you with the next steps.</p>
+
+<div class="row">
+    <div class="col-12 col-lg-6 d-flex flex-column flex-lg-row align-items-center pe-lg-5 pb-4">
+        <div class="form-wrapper w-100">
+            {% comment %} <form method="post" action="{% url 'rental_success' %}"> {% endcomment %}
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                {% if user.is_authenticated %}
+                <button type="submit" class="btn btn-success btn-form">Submit</button>
+                {% else %}
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="loginModalLabel">Please Log In</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>You need to be logged in to book a car.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success btn-form" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                        loginModal.show();
+                    });
+                </script>
+                <button type="submit" class="btn btn-success btn-form disabled btn-disabled">Submit</button>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+    <div class="col-12 col-lg-6 ps-lg-5">
+        <div id="car-card-container" class="container-fluid"></div>
+    </div>
+</div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+{% endblock content %}

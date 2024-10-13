@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <title>{% block title %}Base{% endblock title %}</title>
+    <meta name="description" content="Autis - Car Rental" />
+    <meta name="author" content="jamgre" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{% static 'images/favicon.ico' %}"
+    />
+
+    {% block css %}
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {% endblock %}
+  </head>
+
+  <body>
+    <section class="nav-section">
+      <nav class="navbar navbar-light navbar-expand-md bg-light fixed-top">
+        <div class="container-fluid nav-wrapper">
+          <div class="lr-spacing">
+            <a class="navbar-brand prompt-medium" href="{% url 'home' %}"
+              >Autis</a
+            >
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                <a class="navbar-brand prompt-medium" href="{% url 'home' %}"
+                  >Autis</a
+                >
+              </h5>
+              <button
+                type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              class="offcanvas-body d-flex flex-column flex-md-row align-items-center"
+            >
+              <ul class="navbar-nav justify-content-end flex-grow-1 w-50">
+                <div
+                  class="box d-flex flex-column flex-md-row align-items-center"
+                  style="margin: 0 auto"
+                >
+                  {% block switch-link %}
+                  <li class="nav-item px-2">
+                    <a
+                      class="nav-link center-link switch-link"
+                      href="{% url 'home' %}"
+                      >Home page</a
+                    >
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link center-link" href="{% url 'rent' %}"
+                      >Rent a car</a
+                    >
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link center-link" href="{% url 'contact' %}"
+                      >Contact us</a
+                    >
+                  </li>
+                  {% endblock switch-link %}
+                </div>
+              </ul>
+              <div class="offcanvas-body py-0">
+                <ul
+                  class="navbar-nav lr-spacing justify-content-end flex-grow-1"
+                >
+                  <div
+                    class="d-flex flex-column flex-md-row align-items-center justiy-content-center"
+                  >
+                    {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                      <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Account
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="{% url 'user_profile' %}"
+                            >{{ user.email }}</a
+                          >
+                        </li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="{% url 'account_change_password' %}"
+                            >Change password</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="{% url 'account_logout' %}"
+                            >Logout</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'account_login' %}"
+                        >Login</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="btn btn-success btn-signup"
+                        href="{% url 'account_signup' %}"
+                        role="button"
+                        >Register</a
+                      >
+                    </li>
+                    {% endif %}
+                  </div>
+                </ul>
+              </div>
+            </div>
+            <div class="offcanvas-header offcanvas-header-bottom"></div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <div class="hero-section">
+      <div class="hero-container">
+        <div class="hero-image"></div>
+        <div class="hero-text">
+          <h1>Unleash Your Imagination</h1>
+          <p>Explore the world of possibilities</p>
+        </div>
+        <div class="hero-bg"></div>
+      </div>
+    </div>
+
+    {% if messages %}
+    <div class="messages-container">
+        {% for message in messages %}
+        <div class="system-messages alert alert-{% if message.tags %}{{ message.tags }}{% else %}success{% endif %} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <section class="content-section">
+      <div class="content-wrapper container-fluid">
+        <div class="spacer"></div>
+        {% block content %} {% endblock content %}
+      </div>
+      <div class="spacer"></div>
+    </section>
+
+    <footer class="footer text-white text-center py-3 mt-auto">
+      <div class="justify-content-center align-items-center">
+        <p class="mb-0">&copy; 2024 Autis. All rights reserved.</p>
+        <p class="mb-0">
+          <a href="#" class="text-white" style="text-decoration: none"
+            >Privacy policy</a
+          >
+          |
+          <a href="#" class="text-white" style="text-decoration: none"
+            >Terms and conditions</a
+          >
+          |
+          <a
+            href="{% url 'contact' %}"
+            class="text-white"
+            style="text-decoration: none"
+            >Contact us</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    {% block javascript %}
+    <!-- Bootstrap JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Project JS -->
+    <script src="{% static 'js/base.js' %}"></script>
+
+    {% endblock javascript %}
+  </body>
+</html>

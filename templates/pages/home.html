@@ -1,0 +1,96 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}Autis - Car Rental{% endblock title %}
+{% block content %}
+<h2 id="our-offer" class="pb-4">Our offer</h2>
+<div class="row">
+    {% for car in cars %}
+        <div class="col-md-4">
+            <a href="{% url 'rent_with_car' car.id %}" class="car-card-link">
+                <div class="card mb-4 shadow-sm">
+                    {% if car.image %}
+                        <div class="image-box">
+                            <img src="{{ car.image.url }}" class="card-img-top" alt="{{ car.brand }} {{ car.model }}">
+                        </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
+                        <p class="card-text">Year: {{ car.year }}</p>
+                        <p class="card-text">Category: {{ car.category }}</p>
+                        <p class="card-text">Mileage: {{ car.mileage }} km</p>
+                        <p class="card-text">Engine Size: {{ car.engine_size }} L</p>
+                        <p class="card-text">Fuel: {{ car.fuel }}</p>
+                        <p class="card-text">Gearbox: {{ car.gearbox }}</p>
+                        <p class="card-text">Air Condition: {{ car.air_contidion|yesno:"Yes,No" }}</p>
+                        <p class="card-text">Seats: {{ car.number_of_seats }}</p>
+                        <p class="card-text">Doors: {{ car.number_of_doors }}</p>
+                        <p class="card-text">Color: {{ car.color }}</p>
+                        <p class="card-text">Body Style: {{ car.body_style }}</p>
+                        <p class="card-text">Availability: {{ car.availability|yesno:"Available,Not Available" }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="pagination-container">
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1#our-offer" aria-label="First">
+                        <span aria-hidden="true">&laquo;&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}#our-offer" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-label="First">
+                        <span aria-hidden="true">&laquo;&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+
+            <li class="page-item active">
+                <a class="page-link" href="#">
+                    Page {{ page_obj.number }} of {{ paginator.num_pages }}
+                </a>
+            </li>
+
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}#our-offer" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ paginator.num_pages }}#our-offer" aria-label="Last">
+                        <span aria-hidden="true">&raquo;&raquo;</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-label="Last">
+                        <span aria-hidden="true">&raquo;&raquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+{% endblock content %}
