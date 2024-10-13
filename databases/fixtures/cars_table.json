@@ -1,0 +1,296 @@
+[
+  {
+    "model": "pages.cars",
+    "pk": 1,
+    "fields": {
+      "brand": "BMW",
+      "model": "3",
+      "year": 2023,
+      "category": "Medium",
+      "car_plate": "RZ2390",
+      "mileage": 30000.0,
+      "engine_size": 2.0,
+      "fuel": "Petrol",
+      "gearbox": "Automatic",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Alpine White",
+      "body_style": "Sedan",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 2,
+    "fields": {
+      "brand": "Mercedes-Benz",
+      "model": "Class C",
+      "year": 2023,
+      "category": "Medium",
+      "car_plate": "GD4568",
+      "mileage": 57000.0,
+      "engine_size": 1.8,
+      "fuel": "Petrol",
+      "gearbox": "Automatic",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Midnight Blue",
+      "body_style": "Sedan",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 3,
+    "fields": {
+      "brand": "Toyota",
+      "model": "Aygo",
+      "year": 2024,
+      "category": "Mini",
+      "car_plate": "PO4575",
+      "mileage": 12000.0,
+      "engine_size": 1.0,
+      "fuel": "Hybrid",
+      "gearbox": "Automatic",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Barcelona Red",
+      "body_style": "Hatchback",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 4,
+    "fields": {
+      "brand": "Fiat",
+      "model": "500",
+      "year": 2023,
+      "category": "Mini",
+      "car_plate": "PO8796",
+      "mileage": 35000.0,
+      "engine_size": 1.2,
+      "fuel": "Petrol",
+      "gearbox": "Manual",
+      "air_contidion": true,
+      "number_of_seats": 4,
+      "number_of_doors": 2,
+      "color": "Blue Sky",
+      "body_style": "Hatchback",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 5,
+    "fields": {
+      "brand": "Opel",
+      "model": "Corsa",
+      "year": 2023,
+      "category": "Eco",
+      "car_plate": "WA4532",
+      "mileage": 66000.0,
+      "engine_size": 1.2,
+      "fuel": "Petrol",
+      "gearbox": "Manual",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Azure Red",
+      "body_style": "Hatchback",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 6,
+    "fields": {
+      "brand": "Toyota",
+      "model": "Corolla",
+      "year": 2023,
+      "category": "Compact",
+      "car_plate": "WA2354",
+      "mileage": 75000.0,
+      "engine_size": 1.0,
+      "fuel": "Hybrid",
+      "gearbox": "Automatic",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Pearl",
+      "body_style": "Hatchback",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 7,
+    "fields": {
+      "brand": "Audi",
+      "model": "Q3",
+      "year": 2023,
+      "category": "SUV",
+      "car_plate": "WA6425",
+      "mileage": 43000.0,
+      "engine_size": 1.8,
+      "fuel": "Petrol",
+      "gearbox": "Manual",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Seville Red",
+      "body_style": "SUV",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 8,
+    "fields": {
+      "brand": "Volkswagen",
+      "model": "Polo",
+      "year": 2023,
+      "category": "Eco",
+      "car_plate": "GD4226",
+      "mileage": 68000.0,
+      "engine_size": 1.2,
+      "fuel": "Petrol",
+      "gearbox": "Manual",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Pure White",
+      "body_style": "Hatchback",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 9,
+    "fields": {
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "year": 2024,
+      "category": "Compact",
+      "car_plate": "DW4521",
+      "mileage": 22000.0,
+      "engine_size": 2.0,
+      "fuel": "Diesel",
+      "gearbox": "Manual",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Arctic Blue",
+      "body_style": "Hatchback",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 10,
+    "fields": {
+      "brand": "Toyota",
+      "model": "RAV4",
+      "year": 2024,
+      "category": "SUV",
+      "car_plate": "WA7896",
+      "mileage": 29000.0,
+      "engine_size": 2.5,
+      "fuel": "Hybrid",
+      "gearbox": "Automatic",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Cavalry Blue",
+      "body_style": "SUV",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 11,
+    "fields": {
+      "brand": "Audi",
+      "model": "A4",
+      "year": 2023,
+      "category": "Medium",
+      "car_plate": "WA2586",
+      "mileage": 49000.0,
+      "engine_size": 2.0,
+      "fuel": "Diesel",
+      "gearbox": "Automatic",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Terra Grey",
+      "body_style": "Combi",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 12,
+    "fields": {
+      "brand": "Skoda",
+      "model": "Kamiq",
+      "year": 2023,
+      "category": "SUV",
+      "car_plate": "PO4112",
+      "mileage": 54000.0,
+      "engine_size": 1.8,
+      "fuel": "Petrol",
+      "gearbox": "Manual",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Cappucino Beige",
+      "body_style": "SUV",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 13,
+    "fields": {
+      "brand": "Opel",
+      "model": "Astra",
+      "year": 2023,
+      "category": "Compact",
+      "car_plate": "PO5642",
+      "mileage": 89000.0,
+      "engine_size": 1.2,
+      "fuel": "Petrol",
+      "gearbox": "Manual",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Black",
+      "body_style": "Hatchback",
+      "availability": true
+    }
+  },
+  {
+    "model": "pages.cars",
+    "pk": 14,
+    "fields": {
+      "brand": "Skoda",
+      "model": "Fabia",
+      "year": 2022,
+      "category": "Eco",
+      "car_plate": "PO7812",
+      "mileage": 112000.0,
+      "engine_size": 1.2,
+      "fuel": "Petrol",
+      "gearbox": "Manual",
+      "air_contidion": true,
+      "number_of_seats": 5,
+      "number_of_doors": 4,
+      "color": "Ocean Blue",
+      "body_style": "Hatchback",
+      "availability": true
+    }
+  }
+]

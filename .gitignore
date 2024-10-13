@@ -2,14 +2,14 @@
 .DS_Store
 
 # Byte-compiled / optimized / DLL files #
-__pycache__/
-*.py[cod]
-*$py.class
+# __pycache__/
+# *.py[cod]
+# *$py.class
 
 # Django #
-*.log
-db.sqlite3
-databases
+# *.log
+# db.sqlite3
+# databases
 # media
 
 # Virtual environment
